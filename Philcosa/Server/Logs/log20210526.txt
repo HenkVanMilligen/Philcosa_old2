@@ -1,0 +1,22 @@
+2021-05-26 14:26:40.078 +02:00 [ERR] Failed executing DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AuditTrails] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(max) NULL,
+    [Type] nvarchar(max) NULL,
+    [TableName] nvarchar(max) NULL,
+    [DateTime] datetime2 NOT NULL,
+    [OldValues] nvarchar(max) NULL,
+    [NewValues] nvarchar(max) NULL,
+    [AffectedColumns] nvarchar(max) NULL,
+    [PrimaryKey] nvarchar(max) NULL,
+    CONSTRAINT [PK_AuditTrails] PRIMARY KEY ([Id])
+);
+2021-05-26 14:50:14.311 +02:00 [INF] Seeded Administrator Role.
+2021-05-26 14:50:14.757 +02:00 [INF] Seeded User with Administrator Role.
+2021-05-26 14:50:14.768 +02:00 [INF] Seeded Basic Role.
+2021-05-26 14:50:14.788 +02:00 [INF] Seeded User with Basic Role.
+2021-05-26 14:50:44.208 +02:00 [INF] Now listening on: https://localhost:5001
+2021-05-26 14:50:44.215 +02:00 [INF] Now listening on: http://localhost:5000
+2021-05-26 14:50:44.218 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-26 14:50:44.218 +02:00 [INF] Hosting environment: Development
+2021-05-26 14:50:44.219 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server

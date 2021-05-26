@@ -1,0 +1,22 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Philcosa/Client/bin/Debug/net5.0
+/Philcosa/Server/bin/Debug/net5.0
+/Philcosa.Application/bin/Debug/net5.0
+/Philcosa.Client.Infrastructure/bin/Debug/net5.0
+/Philcosa.Domain/bin/Debug/net5.0
+/Philcosa.Infrastructure/bin/Debug/net5.0
+/Philcosa.Infrastructure.Shared/bin/Debug/net5.0
+/Philcosa.Shared/bin/Debug/net5.0
+/Philcosa/Client/obj
+/Philcosa/Server/obj
+/Philcosa.Application/obj
+/Philcosa.Client.Infrastructure/obj/Debug/net5.0/en/Philcosa.Client.Infrastructure.resources.dll
+/Philcosa.Client.Infrastructure/obj
+/Philcosa.Domain/obj
+/Philcosa.Infrastructure/obj
+/Philcosa.Infrastructure.Shared/obj
+/Philcosa.Shared/obj/Debug/net5.0
+/Philcosa.Shared/obj

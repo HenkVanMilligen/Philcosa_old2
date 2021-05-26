@@ -1,0 +1,3 @@
+﻿namespace Philcosa.Infrastructure.Extensions
+{
+}

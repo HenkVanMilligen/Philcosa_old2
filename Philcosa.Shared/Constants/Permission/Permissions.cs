@@ -34,6 +34,14 @@
             public const string Delete = "Permissions.Roles.Delete";
         }
 
+        public static class Countries
+        {
+            public const string View = "Permissions.Countries.View";
+            public const string Create = "Permissions.Countries.Create";
+            public const string Edit = "Permissions.Countries.Edit";
+            public const string Delete = "Permissions.Countries.Delete";
+        }
+
         public static class Preferences
         {
             //TODO: add permissions

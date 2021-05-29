@@ -140,6 +140,7 @@ namespace Philcosa.Server.Extensions
             services.AddTransient(typeof(IRepositoryAsync<>), typeof(RepositoryAsync<>));
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IBrandRepository, BrandRepository>();
+            services.AddTransient<ICountryRepository, CountryRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             return services;
         }

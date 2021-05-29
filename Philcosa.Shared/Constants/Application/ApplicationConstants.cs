@@ -17,6 +17,10 @@
         public static class Cache
         {
             public const string GetAllBrandsCacheKey = "all-brands";
+            public const string GetAllCountriesCacheKey = "all-countries";
+            public const string GetAllCoverTypesCacheKey = "all-covertypes";
+            public const string GetAllCoverValuesCacheKey = "all-covervalues";
+            public const string GetAllThemesCacheKey = "all-themes";
         }
     }
 }

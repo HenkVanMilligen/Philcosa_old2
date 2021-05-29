@@ -139,7 +139,7 @@ namespace Philcosa.Infrastructure.Services.Identity
         {
             var viewModel = new List<UserRoleModel>();
             var user = await _userManager.FindByIdAsync(userId);
-            foreach (var role in _roleManager.Roles)
+            foreach (var role in _roleManager.Roles.ToList())
             {
                 var userRolesViewModel = new UserRoleModel
                 {

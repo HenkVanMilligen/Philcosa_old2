@@ -45,8 +45,8 @@ namespace Philcosa.Server
             services.AddSharedInfrastructure(_configuration);
             services.RegisterSwagger();
             services.AddInfrastructureMappings();
-            services.AddHangfire(x => x.UsePostgreSqlStorage(_configuration.GetConnectionString("DefaultConnection")));
-            services.AddHangfireServer();
+            //services.AddHangfire(x => x.UsePostgreSqlStorage(_configuration.GetConnectionString("DefaultConnection")));
+            //services.AddHangfireServer();
             services.AddControllers().AddValidators();
             services.AddRazorPages();
             services.AddApiVersioning(config =>
@@ -62,7 +62,7 @@ namespace Philcosa.Server
         {
             app.UseExceptionHandling(env);
             app.UseHttpsRedirection();
-            app.UseHangfireDashboard("/jobs");
+            //app.UseHangfireDashboard("/jobs");
             app.UseMiddleware<ErrorHandlerMiddleware>();
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();

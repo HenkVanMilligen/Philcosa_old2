@@ -132,6 +132,7 @@ namespace Philcosa.Infrastructure
 
         private void AddDefaultCovers()
         {
+            //Only run if no covers exist in db
             if (!_db.Covers.Any())
             {
                 Task.Run(async () =>

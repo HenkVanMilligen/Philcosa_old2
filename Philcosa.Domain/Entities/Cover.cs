@@ -15,9 +15,9 @@ namespace Philcosa.Domain.Entities
 
         public string IdOnDate { get; set; }
 
-        public int? IssuedById { get; set; }
+        public int? CoverIssuerId { get; set; }
 
-        public IssuedByEntity IssuedBy { get; set; }
+        public CoverIssuer CoverIssuer { get; set; }
 
         [MaxLength(10)]
         public string Number { get; set; }
@@ -40,7 +40,7 @@ namespace Philcosa.Domain.Entities
 
         public Country Country { get; set; }
 
-        public string Path { get; set; }
+        public string ImageDataUrl { get; set; }
 
         public IList<CoverTheme> CoverThemes { get; set; }
     }

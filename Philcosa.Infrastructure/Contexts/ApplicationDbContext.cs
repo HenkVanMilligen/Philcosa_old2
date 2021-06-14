@@ -36,7 +36,7 @@ namespace Philcosa.Infrastructure.Contexts
         public DbSet<CoverType> CoverTypes { get; set; }
         public DbSet<CoverValue> CoverValues { get; set; }
         public DbSet<Country> Countries { get; set; }
-        public DbSet<IssuedByEntity> IssuedByEntities { get; set; }
+        public DbSet<CoverIssuer> CoverIssuers { get; set; }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
@@ -78,7 +78,7 @@ namespace Philcosa.Infrastructure.Contexts
             builder.ApplyConfiguration(new CoverTypeConfiguration());
             builder.ApplyConfiguration(new CoverValueConfiguration());
             builder.ApplyConfiguration(new ThemeConfiguration());
-            builder.ApplyConfiguration(new IssuedByEntityConfiguration());
+            builder.ApplyConfiguration(new CoverIssuerEntityConfiguration());
             builder.ApplyConfiguration(new CoverThemeConfiguration());
 
             base.OnModelCreating(builder);

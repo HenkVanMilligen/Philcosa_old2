@@ -3,7 +3,7 @@ using Philcosa.Domain.Entities;
 
 namespace Philcosa.Application.Specifications
 {
-    public class DocumentFilterSpecification : HeroSpecification<Document>
+    public class DocumentFilterSpecification : ApplicationSpecification<Document>
     {
         public DocumentFilterSpecification(string searchString, string userId)
         {

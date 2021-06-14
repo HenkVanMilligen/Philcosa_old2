@@ -26,11 +26,11 @@ namespace Philcosa.Application.Features.Products.Queries.GetAllPaged
         }
     }
 
-    public class GGetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, PaginatedResult<GetAllPagedProductsResponse>>
+    public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, PaginatedResult<GetAllPagedProductsResponse>>
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public GGetAllProductsQueryHandler(IUnitOfWork unitOfWork)
+        public GetAllProductsQueryHandler(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }

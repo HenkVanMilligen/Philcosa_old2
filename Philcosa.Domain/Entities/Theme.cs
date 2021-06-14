@@ -12,7 +12,7 @@ namespace Philcosa.Domain.Entities
     public class Theme : AuditableEntity
     {
         [Required]
-        [MaxLength(25)]
+        [MaxLength(50)]
         public string Name { get; set; }
 
         public IList<CoverTheme> CoverTheme { get; set; }

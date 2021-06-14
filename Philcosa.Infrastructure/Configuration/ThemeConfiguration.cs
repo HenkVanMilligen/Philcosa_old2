@@ -37,6 +37,9 @@ namespace Philcosa.Infrastructure.Configuration
                 if (String.IsNullOrEmpty(theme))
                     continue;
 
+                if (themeList.Exists(x => x.Name == theme))
+                    continue;
+
                 themeList.Add(new Theme
                 {
                     Id = id++,

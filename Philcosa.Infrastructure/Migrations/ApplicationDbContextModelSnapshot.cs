@@ -429,7 +429,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 1,
                             Code = "VEN",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 791, DateTimeKind.Local).AddTicks(2227),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 960, DateTimeKind.Local).AddTicks(8738),
                             Name = "Venda"
                         },
                         new
@@ -437,7 +437,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 2,
                             Code = "TRA",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 795, DateTimeKind.Local).AddTicks(1619),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 963, DateTimeKind.Local).AddTicks(4656),
                             Name = "Transkei"
                         },
                         new
@@ -445,7 +445,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 3,
                             Code = "CIS",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 795, DateTimeKind.Local).AddTicks(1636),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 963, DateTimeKind.Local).AddTicks(4669),
                             Name = "Ciskei"
                         },
                         new
@@ -453,7 +453,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 4,
                             Code = "BOP",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 795, DateTimeKind.Local).AddTicks(1639),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 963, DateTimeKind.Local).AddTicks(4673),
                             Name = "Bophuthatswana"
                         },
                         new
@@ -461,7 +461,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 5,
                             Code = "SWA",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 795, DateTimeKind.Local).AddTicks(1641),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 963, DateTimeKind.Local).AddTicks(4675),
                             Name = "South West Africa"
                         },
                         new
@@ -469,7 +469,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 6,
                             Code = "RSA",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 795, DateTimeKind.Local).AddTicks(1642),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 963, DateTimeKind.Local).AddTicks(4677),
                             Name = "South Africa"
                         },
                         new
@@ -477,7 +477,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 7,
                             Code = "NAM",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 795, DateTimeKind.Local).AddTicks(1644),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 963, DateTimeKind.Local).AddTicks(4678),
                             Name = "Namibia"
                         });
                 });
@@ -507,6 +507,9 @@ namespace Philcosa.Infrastructure.Migrations
                     b.Property<DateTime>("CoverDate")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<int?>("CoverIssuerId")
+                        .HasColumnType("integer");
+
                     b.Property<int?>("CoverTypeId")
                         .HasColumnType("integer");
 
@@ -523,8 +526,8 @@ namespace Philcosa.Infrastructure.Migrations
                     b.Property<string>("IdOnDate")
                         .HasColumnType("text");
 
-                    b.Property<int?>("IssuedById")
-                        .HasColumnType("integer");
+                    b.Property<string>("ImageDataUrl")
+                        .HasColumnType("text");
 
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("text");
@@ -536,9 +539,6 @@ namespace Philcosa.Infrastructure.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("character varying(10)");
 
-                    b.Property<string>("Path")
-                        .HasColumnType("text");
-
                     b.Property<int?>("ValueId")
                         .HasColumnType("integer");
 
@@ -546,13 +546,353 @@ namespace Philcosa.Infrastructure.Migrations
 
                     b.HasIndex("CountryId");
 
-                    b.HasIndex("CoverTypeId");
+                    b.HasIndex("CoverIssuerId");
 
-                    b.HasIndex("IssuedById");
+                    b.HasIndex("CoverTypeId");
 
                     b.HasIndex("ValueId");
 
                     b.ToTable("Covers");
+                });
+
+            modelBuilder.Entity("Philcosa.Domain.Entities.CoverIssuer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("LastModifiedOn")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CoverIssuers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Code = "APH",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(410),
+                            Name = "Airphilsa"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Code = "CAP",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(1991),
+                            Name = "Caprivi Airways"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Code = "FED",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2013),
+                            Name = "Philatelic Federation"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Code = "GLD",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2025),
+                            Name = "First Day Fabrics (GOLD)"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Code = "SLK",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2037),
+                            Name = "First Day Fabrics (SILK)"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Code = "FST",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2054),
+                            Name = "Flitestar"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Code = "FAL",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2065),
+                            Name = "Foreign Airline"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Code = "KPA",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2119),
+                            Name = "Kempton Park Philatelic Society (Kemp Air)"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Code = "KPC",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2131),
+                            Name = "Kempton Park Philatelic Society (Kemp kard)"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Code = "KPK",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2145),
+                            Name = "Kempton Park Philatelic Society (Kemp Kover"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Code = "KPM",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2158),
+                            Name = "Kempton Park Philatelic Society (Kemp Maksikard)"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Code = "NAM",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2169),
+                            Name = "Nam Post"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Code = "NAA",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2180),
+                            Name = "Namib Air/Air Namibia"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Code = "NAD",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2193),
+                            Name = "Namib Air/Air Namibia (Delivery flights)"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Code = "PRV",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2203),
+                            Name = "Private"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Code = "PRC",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2215),
+                            Name = "Private (Ciskei Handcancelled)"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Code = "SMA",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2227),
+                            Name = "SA Air Force Museum (Anniversary Flights)"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Code = "SMO",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2241),
+                            Name = "SA Air Force Museum (Original Series)"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Code = "SMS",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2253),
+                            Name = "SA Air Force Museum (Spesials)"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Code = "SMW",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2264),
+                            Name = "SA Air Force Museum (World War Series)"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Code = "ARM",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2275),
+                            Name = "SA Army"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Code = "DEF",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2287),
+                            Name = "SA Defence Force"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Code = "NAV",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2314),
+                            Name = "SA Navy"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Code = "FOU",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2327),
+                            Name = "SA Philatelic Foundation"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Code = "SAP",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2338),
+                            Name = "SA Police"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Code = "SPO",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2349),
+                            Name = "SA Post Office"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Code = "SAR",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2361),
+                            Name = "SA Railway Services"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Code = "SAT",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2372),
+                            Name = "SA Transport Services"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Code = "SHP",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2383),
+                            Name = "Ship Society of SA"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Code = "SHS",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2395),
+                            Name = "Simonstown Historical Society"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Code = "SNM",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2406),
+                            Name = "Simonstown Navy Museum"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Code = "AER",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2418),
+                            Name = "South African Air Force (Aerobic)"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Code = "SAA",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2429),
+                            Name = "South African Airways"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Code = "SAM",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2442),
+                            Name = "South African Airways Museum"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Code = "TRS",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2453),
+                            Name = "The Railway Society"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Code = "UNN",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2465),
+                            Name = "United Nations"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Code = "WPH",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2476),
+                            Name = "Warner Pharmaceuticals"
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Code = "WWF",
+                            CreatedBy = "DataSeed",
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 993, DateTimeKind.Local).AddTicks(2581),
+                            Name = "World Wildlife Fund"
+                        });
                 });
 
             modelBuilder.Entity("Philcosa.Domain.Entities.CoverTheme", b =>
@@ -562,6 +902,21 @@ namespace Philcosa.Infrastructure.Migrations
 
                     b.Property<int>("ThemeId")
                         .HasColumnType("integer");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("LastModifiedOn")
+                        .HasColumnType("timestamp without time zone");
 
                     b.HasKey("CoverId", "ThemeId");
 
@@ -609,7 +964,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 1,
                             Code = "FDC",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 796, DateTimeKind.Local).AddTicks(7509),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 964, DateTimeKind.Local).AddTicks(7493),
                             Name = "First Day"
                         },
                         new
@@ -617,7 +972,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 2,
                             Code = "CMC",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 796, DateTimeKind.Local).AddTicks(7837),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 964, DateTimeKind.Local).AddTicks(7678),
                             Name = "Comemorative"
                         },
                         new
@@ -625,39 +980,23 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 3,
                             Code = "FLT",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 796, DateTimeKind.Local).AddTicks(7841),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 964, DateTimeKind.Local).AddTicks(7681),
                             Name = "Flight"
                         },
                         new
                         {
                             Id = 4,
-                            Code = "SLK",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 796, DateTimeKind.Local).AddTicks(7843),
-                            Name = "Silk"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Code = "GLD",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 796, DateTimeKind.Local).AddTicks(7845),
-                            Name = "Gold Foiled"
-                        },
-                        new
-                        {
-                            Id = 6,
                             Code = "MIL",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 796, DateTimeKind.Local).AddTicks(7846),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 964, DateTimeKind.Local).AddTicks(7683),
                             Name = "Military"
                         },
                         new
                         {
-                            Id = 7,
+                            Id = 5,
                             Code = "FIL",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 796, DateTimeKind.Local).AddTicks(7849),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 964, DateTimeKind.Local).AddTicks(7685),
                             Name = "Filatelic"
                         },
                         new
@@ -665,7 +1004,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 8,
                             Code = "BAL",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 796, DateTimeKind.Local).AddTicks(7851),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 964, DateTimeKind.Local).AddTicks(7687),
                             Name = "Balloon"
                         },
                         new
@@ -673,7 +1012,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 9,
                             Code = "RWY",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 796, DateTimeKind.Local).AddTicks(7853),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 964, DateTimeKind.Local).AddTicks(7689),
                             Name = "Railway"
                         });
                 });
@@ -718,7 +1057,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 1,
                             Code = "$",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 797, DateTimeKind.Local).AddTicks(5113),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 965, DateTimeKind.Local).AddTicks(4174),
                             MaxValue = 5m,
                             MinValue = 0m
                         },
@@ -727,7 +1066,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 2,
                             Code = "$$",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 797, DateTimeKind.Local).AddTicks(6386),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 965, DateTimeKind.Local).AddTicks(4883),
                             MaxValue = 15m,
                             MinValue = 5.01m
                         },
@@ -736,7 +1075,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 3,
                             Code = "$$$",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 797, DateTimeKind.Local).AddTicks(6428),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 965, DateTimeKind.Local).AddTicks(4935),
                             MaxValue = 50m,
                             MinValue = 15.01m
                         },
@@ -745,7 +1084,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 4,
                             Code = "$$$$",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 797, DateTimeKind.Local).AddTicks(6430),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 965, DateTimeKind.Local).AddTicks(4969),
                             MaxValue = 150m,
                             MinValue = 50.01m
                         },
@@ -754,7 +1093,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 5,
                             Code = "$$$$$",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 797, DateTimeKind.Local).AddTicks(6432),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 965, DateTimeKind.Local).AddTicks(4972),
                             MaxValue = 500m,
                             MinValue = 150.01m
                         },
@@ -763,7 +1102,7 @@ namespace Philcosa.Infrastructure.Migrations
                             Id = 6,
                             Code = "$$$$$$",
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 797, DateTimeKind.Local).AddTicks(6435),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 965, DateTimeKind.Local).AddTicks(4975),
                             MinValue = 500.01m
                         });
                 });
@@ -804,330 +1143,6 @@ namespace Philcosa.Infrastructure.Migrations
                     b.ToTable("Documents");
                 });
 
-            modelBuilder.Entity("Philcosa.Domain.Entities.IssuedByEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("Code")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime?>("LastModifiedOn")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("IssuedByEntities");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Code = "SILK",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 846, DateTimeKind.Local).AddTicks(7622),
-                            Name = "First Day Fabrics (Silk)"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Code = "AEROBIC",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 846, DateTimeKind.Local).AddTicks(9832),
-                            Name = "South African Air Force (Aerobic)"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Code = "SAAR",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 846, DateTimeKind.Local).AddTicks(9856),
-                            Name = "SA Army"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Code = "DF",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 846, DateTimeKind.Local).AddTicks(9871),
-                            Name = "Namib Air/Air Namibia (Delivery flights)"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Code = "UN",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 846, DateTimeKind.Local).AddTicks(9885),
-                            Name = "United Nations"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Code = "WWF",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 846, DateTimeKind.Local).AddTicks(9906),
-                            Name = "World Wildlife Fund"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Code = "NA",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 846, DateTimeKind.Local).AddTicks(9920),
-                            Name = "Namib Air/Air Namibia"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Code = "GOLD",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 846, DateTimeKind.Local).AddTicks(9935),
-                            Name = "First Day Fabrics (Gold)"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Code = "KA",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 846, DateTimeKind.Local).AddTicks(9949),
-                            Name = "Kempton Park Philatelic Society (Kemp Air)"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Code = "TRS",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 846, DateTimeKind.Local).AddTicks(9964),
-                            Name = "The Railway Society"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Code = "SAP",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 846, DateTimeKind.Local).AddTicks(9977),
-                            Name = "SA Police"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Code = "SNM",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 846, DateTimeKind.Local).AddTicks(9991),
-                            Name = "Simonstown Navy Museum"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Code = "NP",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(101),
-                            Name = "Nam Post"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Code = "SADF",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(115),
-                            Name = "SA Defence Force"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Code = "SAPO",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(129),
-                            Name = "SA Post Office"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Code = "SSS",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(142),
-                            Name = "Ship Society of SA"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Code = "SAA",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(156),
-                            Name = "South African Airways"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Code = "SAPF",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(172),
-                            Name = "SA Philatelic Foundation"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            Code = "FED",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(185),
-                            Name = "Federation"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            Code = "SAAM",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(199),
-                            Name = "South African Airways Museum"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            Code = "P",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(212),
-                            Name = "Private"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            Code = "SATS",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(226),
-                            Name = "SA Transport Services"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Code = "SHS",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(240),
-                            Name = "Simonstown Historical Society"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Code = "WP",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(253),
-                            Name = "Warner Pharmaceuticals"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            Code = "SAFM",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(268),
-                            Name = "SA Air Force Museum (Original Series)"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            Code = "KPPS_M",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(283),
-                            Name = "Kempton Park Philatelic Society (Kemp Maksikard)"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            Code = "SARS",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(297),
-                            Name = "SA Railway Services"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            Code = "KPPS_K",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(311),
-                            Name = "Kempton Park Philatelic Society (Kemp Kover)"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            Code = "SAAFM_WWS",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(327),
-                            Name = "SA Air Force Museum (World War Series)"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            Code = "SAAFM_S",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(370),
-                            Name = "SA Air Force Museum (Spesials)"
-                        },
-                        new
-                        {
-                            Id = 31,
-                            Code = "FA",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(383),
-                            Name = "Foreign Airline"
-                        },
-                        new
-                        {
-                            Id = 32,
-                            Code = "SAN",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(396),
-                            Name = "SA Navy"
-                        },
-                        new
-                        {
-                            Id = 33,
-                            Code = "CA",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(410),
-                            Name = "Caprivi Airways"
-                        },
-                        new
-                        {
-                            Id = 34,
-                            Code = "SAAFM_AF",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(426),
-                            Name = "SA Air Force Museum (Anniversary Flights)"
-                        },
-                        new
-                        {
-                            Id = 35,
-                            Code = "F",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(439),
-                            Name = "Flitestar"
-                        },
-                        new
-                        {
-                            Id = 36,
-                            Code = "A",
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 847, DateTimeKind.Local).AddTicks(586),
-                            Name = "Airphilsa"
-                        });
-                });
-
             modelBuilder.Entity("Philcosa.Domain.Entities.Theme", b =>
                 {
                     b.Property<int>("Id")
@@ -1149,8 +1164,8 @@ namespace Philcosa.Infrastructure.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("character varying(25)");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.HasKey("Id");
 
@@ -1161,1065 +1176,820 @@ namespace Philcosa.Infrastructure.Migrations
                         {
                             Id = 1,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1139),
-                            Name = "ITU"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(2841),
+                            Name = "Afrikaans language"
                         },
                         new
                         {
                             Id = 2,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1553),
-                            Name = "Famous Persons"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3719),
+                            Name = "Agriculture/Farming"
                         },
                         new
                         {
                             Id = 3,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1556),
-                            Name = "Sport"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3727),
+                            Name = "Antarctica"
                         },
                         new
                         {
                             Id = 4,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1558),
-                            Name = "Police"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3729),
+                            Name = "Apartheid"
                         },
                         new
                         {
                             Id = 5,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1559),
-                            Name = "UPU"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3731),
+                            Name = "Architecture"
                         },
                         new
                         {
                             Id = 6,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1564),
-                            Name = "Mandela"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3737),
+                            Name = "Arts/Culture/Traditions"
                         },
                         new
                         {
                             Id = 7,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1566),
-                            Name = "Fishing/Angling"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3740),
+                            Name = "Astronomy/Space"
                         },
                         new
                         {
                             Id = 8,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1567),
-                            Name = "Landscapes/Nature"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3742),
+                            Name = "Atletics"
                         },
                         new
                         {
                             Id = 9,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1569),
-                            Name = "Heraldry/Coat of Arms"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3746),
+                            Name = "Balloon Flights"
                         },
                         new
                         {
                             Id = 10,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1571),
-                            Name = "Water and Sanitation"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3750),
+                            Name = "Birds/Bats"
                         },
                         new
                         {
                             Id = 11,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1573),
-                            Name = "Agriculture/Farming"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3753),
+                            Name = "Boer War"
                         },
                         new
                         {
                             Id = 12,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1574),
-                            Name = "Golf"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3755),
+                            Name = "Boxing"
                         },
                         new
                         {
                             Id = 13,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1576),
-                            Name = "Cartoon"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3758),
+                            Name = "Boy Scouts/Girl Guides"
                         },
                         new
                         {
                             Id = 14,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1577),
-                            Name = "Lizards"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3761),
+                            Name = "Bridges/Dams"
                         },
                         new
                         {
                             Id = 15,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1579),
-                            Name = "Law"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3764),
+                            Name = "Butterflies"
                         },
                         new
                         {
                             Id = 16,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1581),
-                            Name = "Swimming"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3767),
+                            Name = "Cars"
                         },
                         new
                         {
                             Id = 17,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1582),
-                            Name = "Stamp on Stamps"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3770),
+                            Name = "Cats/Dogs"
                         },
                         new
                         {
                             Id = 18,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1585),
-                            Name = "Frogs"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3774),
+                            Name = "Child"
                         },
                         new
                         {
                             Id = 19,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1586),
-                            Name = "Costumes"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3777),
+                            Name = "Child Paintings"
                         },
                         new
                         {
                             Id = 20,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1588),
-                            Name = "Child Paintings"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3781),
+                            Name = "Christmas"
                         },
                         new
                         {
                             Id = 21,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1589),
-                            Name = "Turtles"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3784),
+                            Name = "Communication"
                         },
                         new
                         {
                             Id = 22,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1591),
-                            Name = "WWF"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3787),
+                            Name = "Community Services"
                         },
                         new
                         {
                             Id = 23,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1593),
-                            Name = "Religion/Churches"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3791),
+                            Name = "Constitution"
                         },
                         new
                         {
                             Id = 24,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1594),
-                            Name = "Lions International"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3795),
+                            Name = "Cricket"
                         },
                         new
                         {
                             Id = 25,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1596),
-                            Name = "Boer War"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3798),
+                            Name = "Definitive Series"
                         },
                         new
                         {
                             Id = 26,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1597),
-                            Name = "Red Cross"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3802),
+                            Name = "Dinosaurs/Fossils/Archaeology"
                         },
                         new
                         {
                             Id = 27,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1599),
-                            Name = "Trees"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3806),
+                            Name = "Diplomacy"
                         },
                         new
                         {
                             Id = 28,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1600),
-                            Name = "Easter"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3810),
+                            Name = "Disabled"
                         },
                         new
                         {
                             Id = 29,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1602),
-                            Name = "Dogs"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3814),
+                            Name = "Easter"
                         },
                         new
                         {
                             Id = 30,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1603),
-                            Name = "Transport"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3819),
+                            Name = "Education"
                         },
                         new
                         {
                             Id = 31,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1605),
-                            Name = "Gem Stones/Jewels"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3823),
+                            Name = "Energy"
                         },
                         new
                         {
                             Id = 32,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1606),
-                            Name = "Railway/Trains"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3827),
+                            Name = "Famous Persons"
                         },
                         new
                         {
                             Id = 33,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1608),
-                            Name = "History"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3831),
+                            Name = "Fish and Marine Life"
                         },
                         new
                         {
                             Id = 34,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1611),
-                            Name = "Shells"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3869),
+                            Name = "Fishing/Angling"
                         },
                         new
                         {
                             Id = 35,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1612),
-                            Name = "Geology"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3873),
+                            Name = "Flags"
                         },
                         new
                         {
                             Id = 36,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1614),
-                            Name = "Cats"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3878),
+                            Name = "Flight and Aircraft"
                         },
                         new
                         {
                             Id = 37,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1615),
-                            Name = "Grasses"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3882),
+                            Name = "Flora/Flowers"
                         },
                         new
                         {
                             Id = 38,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1617),
-                            Name = "Whales"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3887),
+                            Name = "Food and Drink"
                         },
                         new
                         {
                             Id = 39,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1618),
-                            Name = "Apartheid"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3892),
+                            Name = "Football/Soccer"
                         },
                         new
                         {
                             Id = 40,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1620),
-                            Name = "Government and Politics"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3897),
+                            Name = "Forestry/Trees"
                         },
                         new
                         {
                             Id = 41,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1621),
-                            Name = "Football/Soccer"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3902),
+                            Name = "Forts and Castles"
                         },
                         new
                         {
                             Id = 42,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1623),
-                            Name = "Tennis"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3907),
+                            Name = "Frogs"
                         },
                         new
                         {
                             Id = 43,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1624),
-                            Name = "Hockey"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3912),
+                            Name = "Fruit/Vegetables"
                         },
                         new
                         {
                             Id = 44,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1626),
-                            Name = "Chicken"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3917),
+                            Name = "Gem Stones/Jewels"
                         },
                         new
                         {
                             Id = 45,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1628),
-                            Name = "Nursing"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3922),
+                            Name = "Geology"
                         },
                         new
                         {
                             Id = 46,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1629),
-                            Name = "Flags"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3927),
+                            Name = "Golf"
                         },
                         new
                         {
                             Id = 47,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1631),
-                            Name = "Equestrian"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3932),
+                            Name = "Government and Politics"
                         },
                         new
                         {
                             Id = 48,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1632),
-                            Name = "Disabled"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3938),
+                            Name = "Grasses"
                         },
                         new
                         {
                             Id = 49,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1634),
-                            Name = "Owls"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3943),
+                            Name = "Hares/Rabbits"
                         },
                         new
                         {
                             Id = 50,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1635),
-                            Name = "Definitive Series"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3950),
+                            Name = "Health/Medicine"
                         },
                         new
                         {
                             Id = 51,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1637),
-                            Name = "Girl Guides"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3955),
+                            Name = "Heraldry/Coat of Arms"
                         },
                         new
                         {
                             Id = 52,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1638),
-                            Name = "Maps"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3961),
+                            Name = "Hockey"
                         },
                         new
                         {
                             Id = 53,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1640),
-                            Name = "Christmas"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3967),
+                            Name = "Horses/Equestrian"
                         },
                         new
                         {
                             Id = 54,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1642),
-                            Name = "Science and Technology"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3973),
+                            Name = "Insects/Bees"
                         },
                         new
                         {
                             Id = 55,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1643),
-                            Name = "Hares/Rabbits"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3979),
+                            Name = "ITU"
                         },
                         new
                         {
                             Id = 56,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1645),
-                            Name = "Horses"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3985),
+                            Name = "Landscapes/Nature"
                         },
                         new
                         {
                             Id = 57,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1686),
-                            Name = "Wines and Beer"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3991),
+                            Name = "Law"
                         },
                         new
                         {
                             Id = 58,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1688),
-                            Name = "Helicopters"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(3997),
+                            Name = "Lions International"
                         },
                         new
                         {
                             Id = 59,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1690),
-                            Name = "Submarines"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4003),
+                            Name = "Literature/Writers"
                         },
                         new
                         {
                             Id = 60,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1691),
-                            Name = "Monkeys and Baboons"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4010),
+                            Name = "Mandela"
                         },
                         new
                         {
                             Id = 61,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1693),
-                            Name = "Stamp Exhibition"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4016),
+                            Name = "Manufacturing/Industries"
                         },
                         new
                         {
                             Id = 62,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1695),
-                            Name = "Fruits"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4023),
+                            Name = "Maps"
                         },
                         new
                         {
                             Id = 63,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1696),
-                            Name = "Road Safety"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4029),
+                            Name = "Meteorology/Weather"
                         },
                         new
                         {
                             Id = 64,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1698),
-                            Name = "Mountains"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4036),
+                            Name = "Military"
                         },
                         new
                         {
                             Id = 65,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1699),
-                            Name = "Forestry/Trees"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4043),
+                            Name = "Millenium"
                         },
                         new
                         {
                             Id = 66,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1702),
-                            Name = "Atletics"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4052),
+                            Name = "Mining/Minerals"
                         },
                         new
                         {
                             Id = 67,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1703),
-                            Name = "Voortrekkers"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4059),
+                            Name = "Monkeys and Baboons"
                         },
                         new
                         {
                             Id = 68,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1705),
-                            Name = "Insects"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4067),
+                            Name = "Monuments"
                         },
                         new
                         {
                             Id = 69,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1706),
-                            Name = "Roses"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4074),
+                            Name = "Museums"
                         },
                         new
                         {
                             Id = 70,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1708),
-                            Name = "Tourism"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4082),
+                            Name = "Mushrooms/Fungi"
                         },
                         new
                         {
                             Id = 71,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1709),
-                            Name = "Postal History"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4089),
+                            Name = "Music"
                         },
                         new
                         {
                             Id = 72,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1711),
-                            Name = "Musical Instruments"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4096),
+                            Name = "National Festivals"
                         },
                         new
                         {
                             Id = 73,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1712),
-                            Name = "Music"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4104),
+                            Name = "Nursing"
                         },
                         new
                         {
                             Id = 74,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1714),
-                            Name = "Motorsport"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4161),
+                            Name = "Olympic Games"
                         },
                         new
                         {
                             Id = 75,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1715),
-                            Name = "Antarctica"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4169),
+                            Name = "Orchids"
                         },
                         new
                         {
                             Id = 76,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1717),
-                            Name = "Cricket"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4177),
+                            Name = "Paintings"
                         },
                         new
                         {
                             Id = 77,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1718),
-                            Name = "Health/Medicine"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4185),
+                            Name = "Platinum"
                         },
                         new
                         {
                             Id = 78,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1720),
-                            Name = "Platinum"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4193),
+                            Name = "Police"
                         },
                         new
                         {
                             Id = 79,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1721),
-                            Name = "Literature/Writers"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4201),
+                            Name = "Postal History"
                         },
                         new
                         {
                             Id = 80,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1723),
-                            Name = "Unicef"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4208),
+                            Name = "Presidents and Leaders"
                         },
                         new
                         {
                             Id = 81,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1724),
-                            Name = "Rivers"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4217),
+                            Name = "Railway/Trains"
                         },
                         new
                         {
                             Id = 82,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1726),
-                            Name = "Royals"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4225),
+                            Name = "Red Cross"
                         },
                         new
                         {
                             Id = 83,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1727),
-                            Name = "National Festivals"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4234),
+                            Name = "Religion/Churches"
                         },
                         new
                         {
                             Id = 84,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1729),
-                            Name = "United Nations"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4242),
+                            Name = "Rivers"
                         },
                         new
                         {
                             Id = 85,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1730),
-                            Name = "Manufacturing/Industries"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4250),
+                            Name = "Road Safety"
                         },
                         new
                         {
                             Id = 86,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1732),
-                            Name = "Space"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4259),
+                            Name = "Roses"
                         },
                         new
                         {
                             Id = 87,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1733),
-                            Name = "Fossils"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4267),
+                            Name = "Rotary International"
                         },
                         new
                         {
                             Id = 88,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1735),
-                            Name = "Birds"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4276),
+                            Name = "Royals"
                         },
                         new
                         {
                             Id = 89,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1736),
-                            Name = "Meteorology/Weather"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4285),
+                            Name = "Rugby"
                         },
                         new
                         {
                             Id = 90,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1738),
-                            Name = "Olympic Games"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4294),
+                            Name = "Science and Technology"
                         },
                         new
                         {
                             Id = 91,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1739),
-                            Name = "Astronomy"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4303),
+                            Name = "Settlers"
                         },
                         new
                         {
                             Id = 92,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1741),
-                            Name = "Weapons"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4312),
+                            Name = "Shells"
                         },
                         new
                         {
                             Id = 93,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1742),
-                            Name = "Millenium"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4322),
+                            Name = "Ships/Maritime"
                         },
                         new
                         {
                             Id = 94,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1744),
-                            Name = "Spiders"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4330),
+                            Name = "Snakes/Lizards/Reptiles"
                         },
                         new
                         {
                             Id = 95,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1745),
-                            Name = "Settlers"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4340),
+                            Name = "Spiders"
                         },
                         new
                         {
                             Id = 96,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1747),
-                            Name = "Boxing"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4349),
+                            Name = "Sport"
                         },
                         new
                         {
                             Id = 97,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1749),
-                            Name = "Windmills"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4360),
+                            Name = "Stamp Day"
                         },
                         new
                         {
                             Id = 98,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1750),
-                            Name = "Mining/Minerals"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4368),
+                            Name = "Stamp Exhibition"
                         },
                         new
                         {
                             Id = 99,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1752),
-                            Name = "Forts and Castles"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4379),
+                            Name = "Stamp on Stamps"
                         },
                         new
                         {
                             Id = 100,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1753),
-                            Name = "Diplomacy"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4389),
+                            Name = "Swimming"
                         },
                         new
                         {
                             Id = 101,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1755),
-                            Name = "Mushrooms/Fungi"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4399),
+                            Name = "Tennis"
                         },
                         new
                         {
                             Id = 102,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1756),
-                            Name = "Dams"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4409),
+                            Name = "Tourism"
                         },
                         new
                         {
                             Id = 103,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1758),
-                            Name = "Languages"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4419),
+                            Name = "Towns/Cities History"
                         },
                         new
                         {
                             Id = 104,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1759),
-                            Name = "Sharks"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4429),
+                            Name = "Transport"
                         },
                         new
                         {
                             Id = 105,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1761),
-                            Name = "Arts/Culture/Traditions"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4440),
+                            Name = "Triangle Stamps"
                         },
                         new
                         {
                             Id = 106,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1762),
-                            Name = "Archaeology"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4451),
+                            Name = "Unicef"
                         },
                         new
                         {
                             Id = 107,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1764),
-                            Name = "Telecommunication"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4473),
+                            Name = "Uniforms/Costumes"
                         },
                         new
                         {
                             Id = 108,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1765),
-                            Name = "Rugby"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4484),
+                            Name = "United Nations"
                         },
                         new
                         {
                             Id = 109,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1767),
-                            Name = "Fish and Marine Life"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4495),
+                            Name = "UPU"
                         },
                         new
                         {
                             Id = 110,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1768),
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4505),
                             Name = "van Riebeeck"
                         },
                         new
                         {
                             Id = 111,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1770),
-                            Name = "Orchids"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4516),
+                            Name = "Voortrekkers"
                         },
                         new
                         {
                             Id = 112,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1771),
-                            Name = "Jan van Riebeeck"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4526),
+                            Name = "Water and Sanitation"
                         },
                         new
                         {
                             Id = 113,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1773),
-                            Name = "Flight and Aircraft"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4536),
+                            Name = "Waterfalls"
                         },
                         new
                         {
                             Id = 114,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1774),
-                            Name = "Telephone"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4547),
+                            Name = "Whales/Dolphins/Sharks"
                         },
                         new
                         {
                             Id = 115,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1776),
-                            Name = "Folklore"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4558),
+                            Name = "Wildlife"
                         },
                         new
                         {
                             Id = 116,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1777),
-                            Name = "Cars"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4572),
+                            Name = "Writing"
                         },
                         new
                         {
                             Id = 117,
                             CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1779),
-                            Name = "Gold"
-                        },
-                        new
-                        {
-                            Id = 118,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1780),
-                            Name = "Afrikaans language"
-                        },
-                        new
-                        {
-                            Id = 119,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1782),
-                            Name = "Communication"
-                        },
-                        new
-                        {
-                            Id = 120,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1783),
-                            Name = "Boy Scouts"
-                        },
-                        new
-                        {
-                            Id = 121,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1785),
-                            Name = "Bats"
-                        },
-                        new
-                        {
-                            Id = 122,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1786),
-                            Name = "Solar System"
-                        },
-                        new
-                        {
-                            Id = 123,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1788),
-                            Name = "Architecture"
-                        },
-                        new
-                        {
-                            Id = 124,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1789),
-                            Name = "Scuptures"
-                        },
-                        new
-                        {
-                            Id = 125,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1791),
-                            Name = "Dinosaurs"
-                        },
-                        new
-                        {
-                            Id = 126,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1792),
-                            Name = "Presidents and Leaders"
-                        },
-                        new
-                        {
-                            Id = 127,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1794),
-                            Name = "Bridges"
-                        },
-                        new
-                        {
-                            Id = 128,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1795),
-                            Name = "Museums"
-                        },
-                        new
-                        {
-                            Id = 129,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1797),
-                            Name = "Hunting"
-                        },
-                        new
-                        {
-                            Id = 130,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1849),
-                            Name = "Flora/Flowers"
-                        },
-                        new
-                        {
-                            Id = 131,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1851),
-                            Name = "Constitution"
-                        },
-                        new
-                        {
-                            Id = 132,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1852),
-                            Name = "Balloon Flights"
-                        },
-                        new
-                        {
-                            Id = 133,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1854),
-                            Name = "Snails"
-                        },
-                        new
-                        {
-                            Id = 134,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1856),
-                            Name = "Towns/Cities History"
-                        },
-                        new
-                        {
-                            Id = 135,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1857),
-                            Name = "Butterflies"
-                        },
-                        new
-                        {
-                            Id = 136,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1859),
-                            Name = "Monuments"
-                        },
-                        new
-                        {
-                            Id = 137,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1860),
-                            Name = "Wildlife"
-                        },
-                        new
-                        {
-                            Id = 138,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1862),
-                            Name = "Community Services"
-                        },
-                        new
-                        {
-                            Id = 139,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1863),
-                            Name = "Uniforms"
-                        },
-                        new
-                        {
-                            Id = 140,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1865),
-                            Name = "Ships/Maritime"
-                        },
-                        new
-                        {
-                            Id = 141,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1866),
-                            Name = "Reptiles"
-                        },
-                        new
-                        {
-                            Id = 142,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1868),
-                            Name = "Triangle Stamps"
-                        },
-                        new
-                        {
-                            Id = 143,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1869),
-                            Name = "Energy"
-                        },
-                        new
-                        {
-                            Id = 144,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1871),
-                            Name = "Child"
-                        },
-                        new
-                        {
-                            Id = 145,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1872),
-                            Name = "Snakes"
-                        },
-                        new
-                        {
-                            Id = 146,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1874),
-                            Name = "Stamp Day"
-                        },
-                        new
-                        {
-                            Id = 147,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1875),
-                            Name = "Watersports"
-                        },
-                        new
-                        {
-                            Id = 148,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1877),
-                            Name = "Waterfalls"
-                        },
-                        new
-                        {
-                            Id = 149,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1878),
-                            Name = "Military"
-                        },
-                        new
-                        {
-                            Id = 150,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1880),
-                            Name = "Rotary International"
-                        },
-                        new
-                        {
-                            Id = 151,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1881),
-                            Name = "Paintings"
-                        },
-                        new
-                        {
-                            Id = 152,
-                            CreatedBy = "DataSeed",
-                            CreatedOn = new DateTime(2021, 5, 26, 14, 45, 25, 803, DateTimeKind.Local).AddTicks(1883),
-                            Name = "Education"
+                            CreatedOn = new DateTime(2021, 6, 13, 14, 12, 45, 970, DateTimeKind.Local).AddTicks(4583),
+                            Name = "WWF"
                         });
                 });
 
@@ -2306,13 +2076,13 @@ namespace Philcosa.Infrastructure.Migrations
                         .WithMany("Covers")
                         .HasForeignKey("CountryId");
 
+                    b.HasOne("Philcosa.Domain.Entities.CoverIssuer", "CoverIssuer")
+                        .WithMany("Covers")
+                        .HasForeignKey("CoverIssuerId");
+
                     b.HasOne("Philcosa.Domain.Entities.CoverType", "CoverType")
                         .WithMany("Covers")
                         .HasForeignKey("CoverTypeId");
-
-                    b.HasOne("Philcosa.Domain.Entities.IssuedByEntity", "IssuedBy")
-                        .WithMany("Covers")
-                        .HasForeignKey("IssuedById");
 
                     b.HasOne("Philcosa.Domain.Entities.CoverValue", "Value")
                         .WithMany("Covers")
@@ -2320,9 +2090,9 @@ namespace Philcosa.Infrastructure.Migrations
 
                     b.Navigation("Country");
 
-                    b.Navigation("CoverType");
+                    b.Navigation("CoverIssuer");
 
-                    b.Navigation("IssuedBy");
+                    b.Navigation("CoverType");
 
                     b.Navigation("Value");
                 });
@@ -2363,17 +2133,17 @@ namespace Philcosa.Infrastructure.Migrations
                     b.Navigation("CoverThemes");
                 });
 
+            modelBuilder.Entity("Philcosa.Domain.Entities.CoverIssuer", b =>
+                {
+                    b.Navigation("Covers");
+                });
+
             modelBuilder.Entity("Philcosa.Domain.Entities.CoverType", b =>
                 {
                     b.Navigation("Covers");
                 });
 
             modelBuilder.Entity("Philcosa.Domain.Entities.CoverValue", b =>
-                {
-                    b.Navigation("Covers");
-                });
-
-            modelBuilder.Entity("Philcosa.Domain.Entities.IssuedByEntity", b =>
                 {
                     b.Navigation("Covers");
                 });

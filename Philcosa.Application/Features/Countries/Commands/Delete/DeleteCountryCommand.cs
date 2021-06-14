@@ -16,14 +16,14 @@ namespace Philcosa.Application.Features.Countries.Commands.Delete
 
     public class DeleteCountryCommandHandler : IRequestHandler<DeleteCountryCommand, Result<int>>
     {
-        private readonly IProductRepository _productRepository;
+        private readonly ICountryRepository _countryRepository;
         private readonly IStringLocalizer<DeleteCountryCommandHandler> _localizer;
         private readonly IUnitOfWork _unitOfWork;
 
-        public DeleteCountryCommandHandler(IUnitOfWork unitOfWork, IProductRepository productRepository, IStringLocalizer<DeleteCountryCommandHandler> localizer)
+        public DeleteCountryCommandHandler(IUnitOfWork unitOfWork, ICountryRepository countryRepository, IStringLocalizer<DeleteCountryCommandHandler> localizer)
         {
             _unitOfWork = unitOfWork;
-            _productRepository = productRepository;
+            _countryRepository = countryRepository;
             _localizer = localizer;
         }
 

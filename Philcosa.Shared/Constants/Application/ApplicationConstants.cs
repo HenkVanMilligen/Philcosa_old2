@@ -21,6 +21,7 @@
             public const string GetAllCoverTypesCacheKey = "all-covertypes";
             public const string GetAllCoverValuesCacheKey = "all-covervalues";
             public const string GetAllThemesCacheKey = "all-themes";
+            public const string GetAllCoverIssuersCacheKey = "all-coverissuers";
         }
     }
 }

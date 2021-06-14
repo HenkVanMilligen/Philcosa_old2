@@ -24,6 +24,11 @@
 @using Philcosa.Client.Infrastructure.Managers.Catalog.Product
 @using Philcosa.Client.Infrastructure.Managers.Catalog.Brand
 @using Philcosa.Client.Infrastructure.Managers.Admin.Country
+@using Philcosa.Client.Infrastructure.Managers.Admin.CoverType
+@using Philcosa.Client.Infrastructure.Managers.Admin.CoverValue
+@using Philcosa.Client.Infrastructure.Managers.Admin.Theme
+@using Philcosa.Client.Infrastructure.Managers.Admin.CoverIssuer
+@using Philcosa.Client.Infrastructure.Managers.Admin.Cover
 @using Philcosa.Client.Infrastructure.Managers.Dashboard
 @using Philcosa.Client.Infrastructure.Managers.Communication
 @using Philcosa.Client.Infrastructure.Managers.Audit
@@ -62,6 +67,11 @@
 @inject IProductManager _productManager
 @inject IBrandManager _brandManager
 @inject ICountryManager _countryManager
+@inject ICoverTypeManager _coverTypeManager
+@inject ICoverValueManager _coverValueManager
+@inject IThemeManager _themeManager
+@inject ICoverIssuerManager _coverIssuerManager
+@inject ICoverManager _coverManager
 @inject IDashboardManager _dashboardManager
 @inject IChatManager _chatManager
 @inject IAuditManager _auditManager

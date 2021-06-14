@@ -55,21 +55,36 @@
     @if (_authorizationService.AuthorizeAsync(AuthenticationStateProviderUser, Permissions.Products.View).Result.Succeeded || _authorizationService.AuthorizeAsync(AuthenticationStateProviderUser, Permissions.Brands.View).Result.Succeeded)
     {
         <MudListSubheader Class="mt-2 mb-n2">@localizer["Admin"]</MudListSubheader>
+        <MudNavLink Href="/catalog/covers" Icon="@Icons.Material.Outlined.CallToAction">
+            Covers
+        </MudNavLink>
         <MudNavLink Href="/catalog/countries" Icon="@Icons.Material.Outlined.CallToAction">
             Countries
         </MudNavLink>
-        @*@if (_authorizationService.AuthorizeAsync(AuthenticationStateProviderUser, Permissions.Products.View).Result.Succeeded)
-        {
-            <MudNavLink Href="/catalog/products" Icon="@Icons.Material.Outlined.CallToAction">
-                @localizer["Products"]
-            </MudNavLink>
-        }
-        @if (_authorizationService.AuthorizeAsync(AuthenticationStateProviderUser, Permissions.Brands.View).Result.Succeeded)
-        {
-            <MudNavLink Href="/catalog/brands" Icon="@Icons.Material.Outlined.CallToAction">
-                @localizer["Brands"]
-            </MudNavLink>
-        }*@
+        <MudNavLink Href="/catalog/covertypes" Icon="@Icons.Material.Outlined.CallToAction">
+            Cover Types
+        </MudNavLink>
+        <MudNavLink Href="/catalog/covervalues" Icon="@Icons.Material.Outlined.CallToAction">
+            Cover Values
+        </MudNavLink>
+        <MudNavLink Href="/catalog/themes" Icon="@Icons.Material.Outlined.CallToAction">
+            Themes
+        </MudNavLink>
+        <MudNavLink Href="/catalog/coverissuers" Icon="@Icons.Material.Outlined.CallToAction">
+            Cover Issuers
+        </MudNavLink>
+        @if (_authorizationService.AuthorizeAsync(AuthenticationStateProviderUser, Permissions.Products.View).Result.Succeeded)
+            {
+                <MudNavLink Href="/catalog/products" Icon="@Icons.Material.Outlined.CallToAction">
+                    @localizer["Products"]
+                </MudNavLink>
+            }
+            @if (_authorizationService.AuthorizeAsync(AuthenticationStateProviderUser, Permissions.Brands.View).Result.Succeeded)
+            {
+                <MudNavLink Href="/catalog/brands" Icon="@Icons.Material.Outlined.CallToAction">
+                    @localizer["Brands"]
+                </MudNavLink>
+            }
     }
 </MudNavMenu>
 

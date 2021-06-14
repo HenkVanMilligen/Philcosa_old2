@@ -1,0 +1,182 @@
+2021-06-03 10:50:30.354 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 10:50:30.412 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 10:50:30.417 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 10:50:30.418 +02:00 [INF] Hosting environment: Development
+2021-06-03 10:50:30.419 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 10:51:22.137 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-06-03 10:51:22.137 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-06-03 10:51:22.184 +02:00 [ERR] Connection id "0HM96DJ0DALHB", Request id "0HM96DJ0DALHB:0000002D": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-06-03 10:51:22.184 +02:00 [ERR] Connection id "0HM96DJ0DALHB", Request id "0HM96DJ0DALHB:0000002B": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-06-03 10:51:33.340 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-06-03 10:51:33.341 +02:00 [ERR] Connection id "0HM96DJ0DALHB", Request id "0HM96DJ0DALHB:00000031": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-06-03 10:51:34.047 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-06-03 10:51:34.049 +02:00 [ERR] Connection id "0HM96DJ0DALHB", Request id "0HM96DJ0DALHB:00000033": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-06-03 10:53:52.787 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 10:53:52.848 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 10:53:52.851 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 10:53:52.852 +02:00 [INF] Hosting environment: Development
+2021-06-03 10:53:52.852 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 10:55:11.291 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 10:55:11.345 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 10:55:11.348 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 10:55:11.349 +02:00 [INF] Hosting environment: Development
+2021-06-03 10:55:11.349 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 10:56:36.114 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 10:56:36.171 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 10:56:36.175 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 10:56:36.176 +02:00 [INF] Hosting environment: Development
+2021-06-03 10:56:36.177 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 11:01:43.704 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 11:01:43.783 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 11:01:43.788 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 11:01:43.789 +02:00 [INF] Hosting environment: Development
+2021-06-03 11:01:43.790 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 11:02:26.187 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 11:02:26.237 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 11:02:26.241 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 11:02:26.241 +02:00 [INF] Hosting environment: Development
+2021-06-03 11:02:26.242 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 11:09:06.340 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 11:09:06.389 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 11:09:06.392 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 11:09:06.393 +02:00 [INF] Hosting environment: Development
+2021-06-03 11:09:06.394 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 11:11:39.374 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 11:11:39.423 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 11:11:39.428 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 11:11:39.428 +02:00 [INF] Hosting environment: Development
+2021-06-03 11:11:39.429 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 13:33:21.166 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 13:33:21.225 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 13:33:21.229 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 13:33:21.229 +02:00 [INF] Hosting environment: Development
+2021-06-03 13:33:21.230 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 13:36:23.307 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 13:36:23.355 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 13:36:23.358 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 13:36:23.359 +02:00 [INF] Hosting environment: Development
+2021-06-03 13:36:23.359 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 14:21:44.042 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 14:21:44.101 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 14:21:44.106 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 14:21:44.106 +02:00 [INF] Hosting environment: Development
+2021-06-03 14:21:44.107 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 16:17:58.028 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 16:17:58.086 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 16:17:58.089 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 16:17:58.090 +02:00 [INF] Hosting environment: Development
+2021-06-03 16:17:58.091 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 16:27:05.890 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 16:27:05.946 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 16:27:05.950 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 16:27:05.950 +02:00 [INF] Hosting environment: Development
+2021-06-03 16:27:05.951 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 16:30:00.492 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 16:30:00.540 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 16:30:00.543 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 16:30:00.544 +02:00 [INF] Hosting environment: Development
+2021-06-03 16:30:00.545 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 16:31:18.363 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 16:31:18.411 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 16:31:18.414 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 16:31:18.414 +02:00 [INF] Hosting environment: Development
+2021-06-03 16:31:18.415 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 16:48:29.296 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 16:48:29.348 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 16:48:29.351 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 16:48:29.352 +02:00 [INF] Hosting environment: Development
+2021-06-03 16:48:29.353 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 16:52:33.691 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 16:52:33.749 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 16:52:33.752 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 16:52:33.753 +02:00 [INF] Hosting environment: Development
+2021-06-03 16:52:33.753 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 17:08:41.707 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 17:08:41.757 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 17:08:41.760 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 17:08:41.761 +02:00 [INF] Hosting environment: Development
+2021-06-03 17:08:41.762 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 17:14:42.611 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 17:14:42.670 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 17:14:42.674 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 17:14:42.675 +02:00 [INF] Hosting environment: Development
+2021-06-03 17:14:42.675 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 17:16:52.296 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 17:16:52.350 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 17:16:52.354 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 17:16:52.354 +02:00 [INF] Hosting environment: Development
+2021-06-03 17:16:52.355 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 17:41:19.916 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 17:41:19.967 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 17:41:19.971 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 17:41:19.972 +02:00 [INF] Hosting environment: Development
+2021-06-03 17:41:19.972 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-03 18:12:13.544 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-03 18:12:13.604 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-03 18:12:13.608 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-03 18:12:13.608 +02:00 [INF] Hosting environment: Development
+2021-06-03 18:12:13.609 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server

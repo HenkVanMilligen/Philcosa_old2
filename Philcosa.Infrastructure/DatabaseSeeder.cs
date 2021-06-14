@@ -138,13 +138,14 @@ namespace Philcosa.Infrastructure
                 Task.Run(async () =>
                 {
                     var countries = await _db.Countries.ToListAsync();
-                    var issuedByEntities = await _db.IssuedByEntities.ToListAsync();
+                    var coverIssuerEntities = await _db.CoverIssuers.ToListAsync();
                     var themes = await _db.Themes.ToListAsync();
                     var types = await _db.CoverTypes.ToListAsync();
                     var values = await _db.CoverValues.ToListAsync();
 
                     string seedFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Philcosa.Infrastructure\\Seeds\\";
-                    List<Cover> covers = GetCovers(seedFolder, countries, issuedByEntities, themes, types, values);
+                    string imagesSeedFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Philcosa\\Server\\Files\\Images\\Covers\\";
+                    List<Cover> covers = GetCovers(seedFolder, imagesSeedFolder, countries, coverIssuerEntities, themes, types, values);
 
                     foreach (var cover in covers)
                     {
@@ -171,10 +172,18 @@ namespace Philcosa.Infrastructure
             }
         }
 
-        private static List<Cover> GetCovers(string seedFolder, List<Country> countries, List<IssuedByEntity> issuedByEntities, List<Theme> themes,
-      List<CoverType> types, List<CoverValue> values)
+        private void AddImagesToCovers()
+        {
+
+        }
+
+        private static List<Cover> GetCovers(string seedFolder, string imagesSeedFolder, List<Country> countries, List<CoverIssuer> coverIssuerEntities, List<Theme> themes,
+                                                List<CoverType> types, List<CoverValue> values)
         {
             string file = Path.Combine(seedFolder, "Covers.csv");
+
+            DirectoryInfo imagesDI = new DirectoryInfo(imagesSeedFolder);
+            FileInfo[] images = imagesDI.GetFiles("*.jpg");
 
             var records = new List<Cover>();
             using (var rd = new StreamReader(file))
@@ -194,19 +203,35 @@ namespace Philcosa.Infrastructure
                     var themesList = new List<Theme>();
                     var theme1 = csv.GetField<string>("Theme A");
                     if (!string.IsNullOrEmpty(theme1))
-                        themesList.Add(themes.SingleOrDefault(x => x.Name == theme1));
+                    {
+                        var theme = themes.SingleOrDefault(x => x.Name == theme1);
+                        if (!themesList.Contains(theme))
+                            themesList.Add(theme);
+                    }
 
                     var theme2 = csv.GetField<string>("Theme B");
                     if (!string.IsNullOrEmpty(theme2))
-                        themesList.Add(themes.SingleOrDefault(x => x.Name == theme2));
+                    {
+                        var theme = themes.SingleOrDefault(x => x.Name == theme2);
+                        if (!themesList.Contains(theme))
+                            themesList.Add(theme);
+                    }
 
                     var theme3 = csv.GetField<string>("Theme C");
                     if (!string.IsNullOrEmpty(theme3))
-                        themesList.Add(themes.SingleOrDefault(x => x.Name == theme3));
+                    {
+                        var theme = themes.SingleOrDefault(x => x.Name == theme3);
+                        if (!themesList.Contains(theme))
+                            themesList.Add(theme);
+                    }
 
                     var theme4 = csv.GetField<string>("Theme D");
                     if (!string.IsNullOrEmpty(theme4))
-                        themesList.Add(themes.SingleOrDefault(x => x.Name == theme4));
+                    {
+                        var theme = themes.SingleOrDefault(x => x.Name == theme4);
+                        if (!themesList.Contains(theme))
+                            themesList.Add(theme);
+                    }
 
                     var areaFromCSV = csv.GetField<string>("Area");
                     var typeFromCSV = csv.GetField<string>("Type");
@@ -225,9 +250,22 @@ namespace Philcosa.Infrastructure
                         var coverTheme = new CoverTheme
                         {
                             CoverId = id,
-                            ThemeId = themeForCover.Id
+                            ThemeId = themeForCover.Id,
+                            CreatedBy = "DataSeed",
+                            CreatedOn = DateTime.Now,
+                            LastModifiedBy = null,
+                            LastModifiedOn = null,
                         };
                         coverThemeList.Add(coverTheme);
+                    }
+                    var country = countries.SingleOrDefault(x => x.Code == areaFromCSV);
+                    var coverImagesSearchPhrase = $"{country.Code} {date.ToString("yyyyMMdd")}.{numberOnDate}";
+                    var imageForCover = images.Where(x => x.Name.Contains(coverImagesSearchPhrase));
+                    string imageFileName = null;
+
+                    if (imageForCover != null && imageForCover.Count() == 1)
+                    {                        
+                        imageFileName = $"Files\\Images\\Covers\\{imageForCover.SingleOrDefault().Name}";
                     }
                     var cover = new Cover
                     {
@@ -239,7 +277,7 @@ namespace Philcosa.Infrastructure
 
                         CoverDate = date,
                         IdOnDate = numberOnDate,
-                        IssuedBy = issuedByEntities.SingleOrDefault(x => x.Code == issuedByFromCSV),
+                        CoverIssuer = coverIssuerEntities.SingleOrDefault(x => x.Code == issuedByFromCSV),
                         Number = noFromCSV ?? null,
                         Description = descFromCSV ?? null,
                         AmountIssued = noIssuedFromCSV,
@@ -248,14 +286,18 @@ namespace Philcosa.Infrastructure
                         CoverType = types.SingleOrDefault(x => x.Code == typeFromCSV),
                         Value = values.SingleOrDefault(x => x.Code == valueFromCSV),
                         Country = countries.SingleOrDefault(x => x.Code == areaFromCSV),
-                        CoverThemes = coverThemeList
+                        CoverThemes = coverThemeList,
+                        ImageDataUrl = imageFileName
 
                     };
                     records.Add(cover);
                     id++;
                 }
+
                 return records;
             }
+
+
         }
     }
 }

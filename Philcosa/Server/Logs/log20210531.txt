@@ -1,0 +1,426 @@
+2021-05-31 07:04:42.228 +02:00 [INF] Now listening on: https://localhost:5001
+2021-05-31 07:04:42.299 +02:00 [INF] Now listening on: http://localhost:5000
+2021-05-31 07:04:42.303 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-31 07:04:42.304 +02:00 [INF] Hosting environment: Development
+2021-05-31 07:04:42.305 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-05-31 07:18:34.677 +02:00 [INF] Now listening on: https://localhost:5001
+2021-05-31 07:18:34.739 +02:00 [INF] Now listening on: http://localhost:5000
+2021-05-31 07:18:34.743 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-31 07:18:34.743 +02:00 [INF] Hosting environment: Development
+2021-05-31 07:18:34.744 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-05-31 13:07:51.068 +02:00 [ERR] Failed executing DbCommand (172ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Identity"."Roles" (
+    "Id" text NOT NULL,
+    "Name" character varying(256) NULL,
+    "NormalizedName" character varying(256) NULL,
+    "ConcurrencyStamp" text NULL,
+    CONSTRAINT "PK_Roles" PRIMARY KEY ("Id")
+);
+2021-05-31 13:08:37.515 +02:00 [ERR] Failed executing DbCommand (155ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Identity"."Roles" (
+    "Id" text NOT NULL,
+    "Name" character varying(256) NULL,
+    "NormalizedName" character varying(256) NULL,
+    "ConcurrencyStamp" text NULL,
+    CONSTRAINT "PK_Roles" PRIMARY KEY ("Id")
+);
+2021-05-31 13:10:13.677 +02:00 [ERR] Failed executing DbCommand (407ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (76, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236343', NULL, NULL, 'Paintings');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (77, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236344', NULL, NULL, 'Police');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (78, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236344', NULL, NULL, 'Postal History');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (79, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236344', NULL, NULL, 'Presidents and Leaders');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (82, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236345', NULL, NULL, 'Religion/Churches');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (81, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236345', NULL, NULL, 'Red Cross');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (83, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236345', NULL, NULL, 'Rivers');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (84, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236345', NULL, NULL, 'Road Safety');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (75, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236335', NULL, NULL, 'Orchids');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (85, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236345', NULL, NULL, 'Roses');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (80, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236344', NULL, NULL, 'Railway/Trains');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (74, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236335', NULL, NULL, 'Olympic Games');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (66, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236333', NULL, NULL, 'Mining/Minerals');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (72, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236334', NULL, NULL, 'National Festivals');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (71, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236334', NULL, NULL, 'Music');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (70, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236334', NULL, NULL, 'Mushrooms/Fungi');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (69, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236334', NULL, NULL, 'Museums');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (68, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236334', NULL, NULL, 'Monuments');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (67, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236333', NULL, NULL, 'Monkeys and Baboons');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (65, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236333', NULL, NULL, 'Millenium');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (64, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236333', NULL, NULL, 'Military');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (63, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236333', NULL, NULL, 'Meteorology/Weather');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (62, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236332', NULL, NULL, 'Maps');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (61, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236332', NULL, NULL, 'Manufacturing/Industries');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (86, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236345', NULL, NULL, 'Rotary International');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (73, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236334', NULL, NULL, 'Nursing');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (87, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236346', NULL, NULL, 'Royals');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (106, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236349', NULL, NULL, 'Unicef');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (89, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236346', NULL, NULL, 'Science and Technology');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (60, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236332', NULL, NULL, 'Mandela');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (115, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236351', NULL, NULL, 'Wildlife');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (114, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236351', NULL, NULL, 'Whales/Dolphins/Sharks');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (113, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236351', NULL, NULL, 'Waterfalls');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (112, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236351', NULL, NULL, 'Water and Sanitation');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (111, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236351', NULL, NULL, 'Voortrekkers');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (110, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.23635', NULL, NULL, 'van Riebeeck');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (109, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.23635', NULL, NULL, 'UPU');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (108, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236349', NULL, NULL, 'United Nations');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (107, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236349', NULL, NULL, 'Uniforms/Costumes');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (105, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236349', NULL, NULL, 'Unicef');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (104, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236348', NULL, NULL, 'Triangle Stamps');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (88, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236346', NULL, NULL, 'Rugby');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (103, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236348', NULL, NULL, 'Transport');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (101, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236348', NULL, NULL, 'Tourism');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (100, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236348', NULL, NULL, 'Tennis');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (99, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236348', NULL, NULL, 'Swimming');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (98, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236347', NULL, NULL, 'Stamp on Stamps');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (97, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236347', NULL, NULL, 'Stamp Exhibition');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (96, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236347', NULL, NULL, 'Stamp Day');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (95, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236347', NULL, NULL, 'Sport');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (94, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236347', NULL, NULL, 'Spiders');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (93, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236347', NULL, NULL, 'Snakes/Lizards/Reptiles');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (92, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236346', NULL, NULL, 'Ships/Maritime');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (91, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236346', NULL, NULL, 'Shells');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (90, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236346', NULL, NULL, 'Settlers');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (102, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236348', NULL, NULL, 'Towns/Cities History');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (59, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236332', NULL, NULL, 'Literature/Writers');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (30, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236326', NULL, NULL, 'Education');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (57, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236332', NULL, NULL, 'Law');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (26, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236326', NULL, NULL, 'Dinosaurs/Fossils/Archaeology');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (25, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236326', NULL, NULL, 'Definitive Series');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (24, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236326', NULL, NULL, 'Cricket');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (23, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236325', NULL, NULL, 'Constitution');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (22, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236325', NULL, NULL, 'Community Services');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (21, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236325', NULL, NULL, 'Communication');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (20, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236325', NULL, NULL, 'Christmas');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (19, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236325', NULL, NULL, 'Child Paintings');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (18, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236325', NULL, NULL, 'Child');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (17, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236325', NULL, NULL, 'Cats/Dogs');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (16, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236324', NULL, NULL, 'Cars');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (15, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236324', NULL, NULL, 'Butterflies');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (27, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236326', NULL, NULL, 'Diplomacy');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (14, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236324', NULL, NULL, 'Bridges/Dams');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (12, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236324', NULL, NULL, 'Boxing');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (11, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236324', NULL, NULL, 'Boer War');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (10, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236324', NULL, NULL, 'Birds/Bats');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (9, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236323', NULL, NULL, 'Balloon Flights');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (8, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236323', NULL, NULL, 'Atletics');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (7, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236323', NULL, NULL, 'Astronomy/Space');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (6, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236323', NULL, NULL, 'Arts/Culture/Traditions');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (5, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236323', NULL, NULL, 'Architecture');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (4, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236322', NULL, NULL, 'Apartheid');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (3, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236322', NULL, NULL, 'Antarctica');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (2, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236322', NULL, NULL, 'Agriculture/Farming');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (1, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236279', NULL, NULL, 'Afrikaans language');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (13, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236324', NULL, NULL, 'Boy Scouts/Girl Guides');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (58, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236332', NULL, NULL, 'Lions International');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (28, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236326', NULL, NULL, 'Disabled');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (116, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236351', NULL, NULL, 'Writing');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (56, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236331', NULL, NULL, 'Landscapes/Nature');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (55, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236331', NULL, NULL, 'ITU');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (54, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236331', NULL, NULL, 'Insects/Bees');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (53, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236331', NULL, NULL, 'Horses/Equestrian');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (52, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236331', NULL, NULL, 'Hockey');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (51, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.23633', NULL, NULL, 'Heraldry/Coat of Arms');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (50, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.23633', NULL, NULL, 'Health/Medicine');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (49, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.23633', NULL, NULL, 'Hares/Rabbits');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (48, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.23633', NULL, NULL, 'Grasses');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (47, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.23633', NULL, NULL, 'Government and Politics');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (46, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.23633', NULL, NULL, 'Golf');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (45, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236329', NULL, NULL, 'Geology');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (29, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236326', NULL, NULL, 'Easter');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (44, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236329', NULL, NULL, 'Gem Stones/Jewels');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (42, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236329', NULL, NULL, 'Frogs');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (41, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236329', NULL, NULL, 'Forts and Castles');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (40, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236329', NULL, NULL, 'Forestry/Trees');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (39, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236328', NULL, NULL, 'Football/Soccer');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (38, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236328', NULL, NULL, 'Food and Drink');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (37, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236328', NULL, NULL, 'Flora/Flowers');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (36, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236328', NULL, NULL, 'Flight and Aircraft');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (35, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236328', NULL, NULL, 'Flags');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (34, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236327', NULL, NULL, 'Fishing/Angling');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (33, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236327', NULL, NULL, 'Fish and Marine Life');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (32, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236327', NULL, NULL, 'Famous Persons');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (31, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236327', NULL, NULL, 'Energy');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (43, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236329', NULL, NULL, 'Fruit/Vegetables');
+INSERT INTO "Themes" ("Id", "CreatedBy", "CreatedOn", "LastModifiedBy", "LastModifiedOn", "Name")
+VALUES (117, 'DataSeed', TIMESTAMP '2021-05-31 13:07:31.236352', NULL, NULL, 'WWF');
+2021-05-31 13:23:42.079 +02:00 [INF] Seeded Administrator Role.
+2021-05-31 13:23:42.540 +02:00 [INF] Seeded User with Administrator Role.
+2021-05-31 13:23:42.553 +02:00 [INF] Seeded Basic Role.
+2021-05-31 13:23:42.574 +02:00 [INF] Seeded User with Basic Role.
+2021-05-31 13:41:40.675 +02:00 [INF] Seeded Administrator Role.
+2021-05-31 13:41:41.141 +02:00 [INF] Seeded User with Administrator Role.
+2021-05-31 13:41:41.153 +02:00 [INF] Seeded Basic Role.
+2021-05-31 13:41:41.173 +02:00 [INF] Seeded User with Basic Role.
+2021-05-31 13:48:45.311 +02:00 [FTL] Application startup exception
+System.InvalidOperationException: Sequence contains more than one matching element
+   at System.Linq.ThrowHelper.ThrowMoreThanOneMatchException()
+   at System.Linq.Enumerable.SingleOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   at Philcosa.Infrastructure.DatabaseSeeder.GetCovers(String seedFolder, List`1 countries, List`1 coverIssuerEntities, List`1 themes, List`1 types, List`1 values) in D:\Dev\Philcosa\Philcosa.Infrastructure\DatabaseSeeder.cs:line 197
+   at Philcosa.Infrastructure.DatabaseSeeder.<AddDefaultCovers>b__9_0() in D:\Dev\Philcosa\Philcosa.Infrastructure\DatabaseSeeder.cs:line 147
+   at Philcosa.Infrastructure.DatabaseSeeder.AddDefaultCovers() in D:\Dev\Philcosa\Philcosa.Infrastructure\DatabaseSeeder.cs:line 138
+   at Philcosa.Infrastructure.DatabaseSeeder.Initialize() in D:\Dev\Philcosa\Philcosa.Infrastructure\DatabaseSeeder.cs:line 42
+   at Philcosa.Server.Extensions.ApplicationBuilderExtensions.Initialize(IApplicationBuilder app, IConfiguration _configuration) in D:\Dev\Philcosa\Philcosa\Server\Extensions\ApplicationBuilderExtensions.cs:line 75
+   at Philcosa.Server.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env) in D:\Dev\Philcosa\Philcosa\Server\Startup.cs:line 80
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass15_0.<UseStartup>b__1(IApplicationBuilder app)
+   at Microsoft.Extensions.DependencyInjection.AutoRegisterMiddleware.<>c__DisplayClass4_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2021-05-31 14:18:24.704 +02:00 [INF] Seeded Administrator Role.
+2021-05-31 14:18:25.174 +02:00 [INF] Seeded User with Administrator Role.
+2021-05-31 14:18:25.188 +02:00 [INF] Seeded Basic Role.
+2021-05-31 14:18:25.209 +02:00 [INF] Seeded User with Basic Role.
+2021-05-31 14:23:48.638 +02:00 [FTL] Application startup exception
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Philcosa.Infrastructure.DatabaseSeeder.GetCovers(String seedFolder, List`1 countries, List`1 coverIssuerEntities, List`1 themes, List`1 types, List`1 values) in D:\Dev\Philcosa\Philcosa.Infrastructure\DatabaseSeeder.cs:line 230
+   at Philcosa.Infrastructure.DatabaseSeeder.<AddDefaultCovers>b__9_0() in D:\Dev\Philcosa\Philcosa.Infrastructure\DatabaseSeeder.cs:line 147
+   at Philcosa.Infrastructure.DatabaseSeeder.AddDefaultCovers() in D:\Dev\Philcosa\Philcosa.Infrastructure\DatabaseSeeder.cs:line 138
+   at Philcosa.Infrastructure.DatabaseSeeder.Initialize() in D:\Dev\Philcosa\Philcosa.Infrastructure\DatabaseSeeder.cs:line 42
+   at Philcosa.Server.Extensions.ApplicationBuilderExtensions.Initialize(IApplicationBuilder app, IConfiguration _configuration) in D:\Dev\Philcosa\Philcosa\Server\Extensions\ApplicationBuilderExtensions.cs:line 75
+   at Philcosa.Server.Startup.Configure(IApplicationBuilder app, IWebHostEnvironment env) in D:\Dev\Philcosa\Philcosa\Server\Startup.cs:line 80
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass15_0.<UseStartup>b__1(IApplicationBuilder app)
+   at Microsoft.Extensions.DependencyInjection.AutoRegisterMiddleware.<>c__DisplayClass4_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2021-05-31 15:11:23.795 +02:00 [INF] Now listening on: https://localhost:5001
+2021-05-31 15:11:23.866 +02:00 [INF] Now listening on: http://localhost:5000
+2021-05-31 15:11:23.869 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-31 15:11:23.870 +02:00 [INF] Hosting environment: Development
+2021-05-31 15:11:23.871 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-05-31 15:15:56.587 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-05-31 15:15:56.587 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-05-31 15:15:56.640 +02:00 [ERR] Connection id "0HM946ORTTOA5", Request id "0HM946ORTTOA5:00000021": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-05-31 15:15:56.640 +02:00 [ERR] Connection id "0HM946ORTTOA5", Request id "0HM946ORTTOA5:00000023": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-05-31 15:18:42.085 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-05-31 15:18:42.117 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-05-31 15:18:42.120 +02:00 [ERR] Connection id "0HM946ORTTOA5", Request id "0HM946ORTTOA5:00000025": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-05-31 15:18:42.120 +02:00 [ERR] Connection id "0HM946ORTTOA5", Request id "0HM946ORTTOA5:00000027": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-05-31 15:51:38.838 +02:00 [INF] Now listening on: https://localhost:5001
+2021-05-31 15:51:38.894 +02:00 [INF] Now listening on: http://localhost:5000
+2021-05-31 15:51:38.897 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-31 15:51:38.898 +02:00 [INF] Hosting environment: Development
+2021-05-31 15:51:38.899 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-05-31 16:14:27.923 +02:00 [INF] Now listening on: https://localhost:5001
+2021-05-31 16:14:28.002 +02:00 [INF] Now listening on: http://localhost:5000
+2021-05-31 16:14:28.006 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-31 16:14:28.007 +02:00 [INF] Hosting environment: Development
+2021-05-31 16:14:28.008 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-05-31 16:16:07.992 +02:00 [INF] Now listening on: https://localhost:5001
+2021-05-31 16:16:08.047 +02:00 [INF] Now listening on: http://localhost:5000
+2021-05-31 16:16:08.051 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-31 16:16:08.051 +02:00 [INF] Hosting environment: Development
+2021-05-31 16:16:08.052 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-05-31 16:22:49.140 +02:00 [INF] Now listening on: https://localhost:5001
+2021-05-31 16:22:49.203 +02:00 [INF] Now listening on: http://localhost:5000
+2021-05-31 16:22:49.207 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-31 16:22:49.208 +02:00 [INF] Hosting environment: Development
+2021-05-31 16:22:49.208 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-05-31 16:27:01.009 +02:00 [INF] Now listening on: https://localhost:5001
+2021-05-31 16:27:01.063 +02:00 [INF] Now listening on: http://localhost:5000
+2021-05-31 16:27:01.067 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-31 16:27:01.068 +02:00 [INF] Hosting environment: Development
+2021-05-31 16:27:01.068 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-05-31 16:28:57.146 +02:00 [INF] Now listening on: https://localhost:5001
+2021-05-31 16:28:57.199 +02:00 [INF] Now listening on: http://localhost:5000
+2021-05-31 16:28:57.203 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-31 16:28:57.203 +02:00 [INF] Hosting environment: Development
+2021-05-31 16:28:57.204 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-05-31 16:29:43.131 +02:00 [INF] Now listening on: https://localhost:5001
+2021-05-31 16:29:43.186 +02:00 [INF] Now listening on: http://localhost:5000
+2021-05-31 16:29:43.189 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-31 16:29:43.190 +02:00 [INF] Hosting environment: Development
+2021-05-31 16:29:43.191 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-05-31 16:37:33.818 +02:00 [INF] Now listening on: https://localhost:5001
+2021-05-31 16:37:33.876 +02:00 [INF] Now listening on: http://localhost:5000
+2021-05-31 16:37:33.880 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-05-31 16:37:33.880 +02:00 [INF] Hosting environment: Development
+2021-05-31 16:37:33.881 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server

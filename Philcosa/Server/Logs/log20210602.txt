@@ -1,0 +1,72 @@
+2021-06-02 11:05:31.022 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-02 11:05:31.073 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-02 11:05:31.078 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-02 11:05:31.079 +02:00 [INF] Hosting environment: Development
+2021-06-02 11:05:31.080 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-02 11:15:58.842 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-02 11:15:58.892 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-02 11:15:58.895 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-02 11:15:58.896 +02:00 [INF] Hosting environment: Development
+2021-06-02 11:15:58.897 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-02 11:16:16.468 +02:00 [ERR] Failed executing DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Alberta", c."AmountIssued", c."Atlas", c."CountryId", c."CoverDate", c."CoverIssuerId", c."CoverTypeId", c."CreatedBy", c."CreatedOn", c."Description", c."IdOnDate", c."ImageDataUrl", c."LastModifiedBy", c."LastModifiedOn", c."Number", c."ValueId"
+FROM "Covers" AS c
+2021-06-02 11:16:16.597 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Philcosa.Infrastructure.Contexts.ApplicationDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column c.ImageDataUrl does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.ImageDataUrl does not exist
+    Position: 185
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column c.ImageDataUrl does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.ImageDataUrl does not exist
+    Position: 185
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+2021-06-02 11:25:26.809 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-02 11:25:26.866 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-02 11:25:26.870 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-02 11:25:26.871 +02:00 [INF] Hosting environment: Development
+2021-06-02 11:25:26.872 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-02 13:40:16.698 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-02 13:40:16.753 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-02 13:40:16.757 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-02 13:40:16.757 +02:00 [INF] Hosting environment: Development
+2021-06-02 13:40:16.758 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-02 13:41:41.110 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-02 13:41:41.158 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-02 13:41:41.161 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-02 13:41:41.162 +02:00 [INF] Hosting environment: Development
+2021-06-02 13:41:41.162 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-02 16:25:34.764 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-02 16:25:34.819 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-02 16:25:34.822 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-02 16:25:34.823 +02:00 [INF] Hosting environment: Development
+2021-06-02 16:25:34.824 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Philcosa.Domain.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Philcosa.Domain.Entities
 {
-    public class CoverTheme 
+    public class CoverTheme : AuditableEntity
     {        
         public int CoverId { get; set; }
         public Cover Cover { get; set; }

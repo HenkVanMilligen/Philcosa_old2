@@ -15,16 +15,16 @@ namespace Philcosa.Server.Controllers.v1.Admin
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var Countries = await _mediator.Send(new GetAllCountriesQuery());
-            return Ok(Countries);
+            var countries = await _mediator.Send(new GetAllCountriesQuery());
+            return Ok(countries);
         }
 
         //[Authorize(Policy = Permissions.Countries.View)]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var Country = await _mediator.Send(new GetCountryByIdQuery() { Id = id });
-            return Ok(Country);
+            var country = await _mediator.Send(new GetCountryByIdQuery() { Id = id });
+            return Ok(country);
         }
 
         //[Authorize(Policy = Permissions.Countries.Create)]

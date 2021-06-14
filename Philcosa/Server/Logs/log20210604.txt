@@ -1,0 +1,75 @@
+2021-06-04 07:28:33.350 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-04 07:28:33.409 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-04 07:28:33.412 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-04 07:28:33.413 +02:00 [INF] Hosting environment: Development
+2021-06-04 07:28:33.415 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-04 07:42:07.127 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-04 07:42:07.181 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-04 07:42:07.184 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-04 07:42:07.185 +02:00 [INF] Hosting environment: Development
+2021-06-04 07:42:07.186 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-04 07:58:04.046 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-04 07:58:04.093 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-04 07:58:04.096 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-04 07:58:04.096 +02:00 [INF] Hosting environment: Development
+2021-06-04 07:58:04.097 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-04 08:06:04.060 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-04 08:06:04.114 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-04 08:06:04.117 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-04 08:06:04.118 +02:00 [INF] Hosting environment: Development
+2021-06-04 08:06:04.119 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-04 15:50:40.856 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-04 15:50:40.912 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-04 15:50:40.915 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-04 15:50:40.916 +02:00 [INF] Hosting environment: Development
+2021-06-04 15:50:40.916 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-04 15:55:20.209 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-04 15:55:20.262 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-04 15:55:20.266 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-04 15:55:20.266 +02:00 [INF] Hosting environment: Development
+2021-06-04 15:55:20.267 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-04 15:59:31.006 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-04 15:59:31.054 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-04 15:59:31.057 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-04 15:59:31.058 +02:00 [INF] Hosting environment: Development
+2021-06-04 15:59:31.059 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-04 16:17:06.800 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-04 16:17:06.847 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-04 16:17:06.851 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-04 16:17:06.851 +02:00 [INF] Hosting environment: Development
+2021-06-04 16:17:06.851 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-04 16:19:04.770 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-04 16:19:04.816 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-04 16:19:04.819 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-04 16:19:04.819 +02:00 [INF] Hosting environment: Development
+2021-06-04 16:19:04.820 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-04 16:34:43.662 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-04 16:34:43.710 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-04 16:34:43.713 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-04 16:34:43.714 +02:00 [INF] Hosting environment: Development
+2021-06-04 16:34:43.714 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-04 16:36:05.980 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-04 16:36:06.030 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-04 16:36:06.033 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-04 16:36:06.034 +02:00 [INF] Hosting environment: Development
+2021-06-04 16:36:06.035 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-04 16:41:06.619 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-04 16:41:06.666 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-04 16:41:06.669 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-04 16:41:06.670 +02:00 [INF] Hosting environment: Development
+2021-06-04 16:41:06.670 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-04 16:43:54.924 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-04 16:43:54.971 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-04 16:43:54.973 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-04 16:43:54.974 +02:00 [INF] Hosting environment: Development
+2021-06-04 16:43:54.975 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-04 16:44:42.035 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-04 16:44:42.083 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-04 16:44:42.086 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-04 16:44:42.087 +02:00 [INF] Hosting environment: Development
+2021-06-04 16:44:42.087 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-04 16:54:20.395 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-04 16:54:20.450 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-04 16:54:20.453 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-04 16:54:20.454 +02:00 [INF] Hosting environment: Development
+2021-06-04 16:54:20.454 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server

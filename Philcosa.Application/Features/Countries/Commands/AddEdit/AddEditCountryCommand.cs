@@ -39,7 +39,13 @@ namespace Philcosa.Application.Features.Countries.Commands.AddEdit
         {
             if (command.Id == 0)
             {
-                var country = _mapper.Map<Country>(command);
+                var country = new Country
+                {
+                    Id = _unitOfWork.Repository<Country>().GetAllAsync().Result.Count + 1,
+                    Code = command.Code,
+                    Name = command.Name
+                };
+                    
                 await _unitOfWork.Repository<Country>().AddAsync(country);
                 await _unitOfWork.ComitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllCountriesCacheKey);
                 return await Result<int>.SuccessAsync(country.Id, _localizer["Country Saved"]);

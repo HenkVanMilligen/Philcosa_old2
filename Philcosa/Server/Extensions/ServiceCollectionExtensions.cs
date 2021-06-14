@@ -141,6 +141,12 @@ namespace Philcosa.Server.Extensions
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IBrandRepository, BrandRepository>();
             services.AddTransient<ICountryRepository, CountryRepository>();
+            services.AddTransient<ICoverTypeRepository, CoverTypeRepository>();
+            services.AddTransient<ICoverValueRepository, CoverValueRepository>();
+            services.AddTransient<IThemeRepository, ThemeRepository>();
+            services.AddTransient<ICoverIssuerRepository, CoverIssuerRepository>();
+            services.AddTransient<ICoverRepository, CoverRepository>();
+
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             return services;
         }

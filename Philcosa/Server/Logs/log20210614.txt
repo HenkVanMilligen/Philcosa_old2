@@ -1,0 +1,42 @@
+2021-06-14 10:30:23.822 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 10:30:23.910 +02:00 [INF] Hosting environment: Development
+2021-06-14 10:30:23.912 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 10:35:59.681 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 10:35:59.782 +02:00 [INF] Hosting environment: Development
+2021-06-14 10:35:59.784 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 10:43:42.252 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-14 10:43:42.302 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-14 10:43:42.306 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 10:43:42.307 +02:00 [INF] Hosting environment: Development
+2021-06-14 10:43:42.307 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 10:45:01.110 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-14 10:45:01.158 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-14 10:45:01.160 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 10:45:01.161 +02:00 [INF] Hosting environment: Development
+2021-06-14 10:45:01.162 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 10:48:42.781 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-14 10:48:42.829 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-14 10:48:42.832 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 10:48:42.833 +02:00 [INF] Hosting environment: Development
+2021-06-14 10:48:42.834 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 11:35:34.675 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 11:35:34.775 +02:00 [INF] Hosting environment: Development
+2021-06-14 11:35:34.778 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 11:40:58.676 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 11:40:58.742 +02:00 [INF] Hosting environment: Development
+2021-06-14 11:40:58.744 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 11:47:57.215 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 11:47:57.281 +02:00 [INF] Hosting environment: Development
+2021-06-14 11:47:57.283 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 11:49:46.359 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 11:49:46.454 +02:00 [INF] Hosting environment: Development
+2021-06-14 11:49:46.456 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 11:51:29.481 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 11:51:29.544 +02:00 [INF] Hosting environment: Development
+2021-06-14 11:51:29.546 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 12:27:32.607 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 12:27:32.687 +02:00 [INF] Hosting environment: Development
+2021-06-14 12:27:32.689 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 12:39:32.124 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 12:39:32.214 +02:00 [INF] Hosting environment: Development
+2021-06-14 12:39:32.216 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server

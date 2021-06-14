@@ -1,0 +1,151 @@
+2021-06-07 15:56:15.629 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-07 15:56:15.713 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-07 15:56:15.717 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-07 15:56:15.717 +02:00 [INF] Hosting environment: Development
+2021-06-07 15:56:15.718 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-07 15:56:50.377 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-06-07 15:56:50.377 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-06-07 15:56:50.377 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-06-07 15:56:50.425 +02:00 [ERR] Connection id "0HM99NGBFQVUC", Request id "0HM99NGBFQVUC:00000023": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-06-07 15:56:50.425 +02:00 [ERR] Connection id "0HM99NGBFQVUC", Request id "0HM99NGBFQVUC:0000001F": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-06-07 15:56:50.425 +02:00 [ERR] Connection id "0HM99NGBFQVUC", Request id "0HM99NGBFQVUC:00000025": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-06-07 15:57:52.409 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-06-07 15:57:52.487 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-06-07 15:57:52.487 +02:00 [ERR] Connection id "0HM99NGBFQVUC", Request id "0HM99NGBFQVUC:00000029": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-06-07 15:57:52.489 +02:00 [ERR] Connection id "0HM99NGBFQVUF", Request id "0HM99NGBFQVUF:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-06-07 15:57:53.838 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-06-07 15:57:53.845 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-06-07 15:57:53.846 +02:00 [ERR] Connection id "0HM99NGBFQVUC", Request id "0HM99NGBFQVUC:0000002B": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-06-07 15:57:53.846 +02:00 [ERR] Connection id "0HM99NGBFQVUF", Request id "0HM99NGBFQVUF:00000011": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-06-07 16:33:16.670 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-07 16:33:16.731 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-07 16:33:16.735 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-07 16:33:16.735 +02:00 [INF] Hosting environment: Development
+2021-06-07 16:33:16.736 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-07 16:34:45.303 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-07 16:34:45.351 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-07 16:34:45.354 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-07 16:34:45.355 +02:00 [INF] Hosting environment: Development
+2021-06-07 16:34:45.355 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-07 16:36:32.360 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-07 16:36:32.408 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-07 16:36:32.411 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-07 16:36:32.412 +02:00 [INF] Hosting environment: Development
+2021-06-07 16:36:32.412 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-07 16:45:18.519 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-07 16:45:18.566 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-07 16:45:18.569 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-07 16:45:18.569 +02:00 [INF] Hosting environment: Development
+2021-06-07 16:45:18.570 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server

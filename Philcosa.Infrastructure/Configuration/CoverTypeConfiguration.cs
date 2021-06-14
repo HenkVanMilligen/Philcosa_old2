@@ -47,26 +47,6 @@ namespace Philcosa.Infrastructure.Configuration
                     new CoverType
                     {
                         Id = 4,
-                        Code = "SLK",
-                        CreatedOn = DateTime.Now,
-                        CreatedBy = "DataSeed",
-                        LastModifiedOn = null,
-                        LastModifiedBy = null,
-                        Name = "Silk"
-                    },
-                    new CoverType
-                    {
-                        Id = 5,
-                        Code = "GLD",
-                        CreatedOn = DateTime.Now,
-                        CreatedBy = "DataSeed",
-                        LastModifiedOn = null,
-                        LastModifiedBy = null,
-                        Name = "Gold Foiled"
-                    },
-                    new CoverType
-                    {
-                        Id = 6,
                         Code = "MIL",
                         CreatedOn = DateTime.Now,
                         CreatedBy = "DataSeed",
@@ -76,7 +56,7 @@ namespace Philcosa.Infrastructure.Configuration
                     },
                     new CoverType
                     {
-                        Id = 7,
+                        Id = 5,
                         Code = "FIL",
                         CreatedOn = DateTime.Now,
                         CreatedBy = "DataSeed",

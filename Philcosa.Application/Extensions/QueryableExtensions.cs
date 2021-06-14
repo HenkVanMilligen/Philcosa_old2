@@ -30,6 +30,7 @@ namespace Philcosa.Application.Extensions
             var secondaryResult = spec.IncludeStrings
                 .Aggregate(queryableResultWithIncludes,
                     (current, include) => current.Include(include));
+
             return secondaryResult.Where(spec.Criteria);
         }
     }

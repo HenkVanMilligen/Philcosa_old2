@@ -14,7 +14,6 @@ namespace Philcosa.Domain.Entities
         public DateTime CoverDate { get; set; }
 
         public string IdOnDate { get; set; }
-
         public int? CoverIssuerId { get; set; }
 
         public CoverIssuer CoverIssuer { get; set; }
@@ -33,11 +32,14 @@ namespace Philcosa.Domain.Entities
 
         [MaxLength(5)]
         public string Alberta { get; set; }
+        public int? CoverTypeId { get; set; }
 
         public CoverType CoverType { get; set; }
+        public int? ValueId { get; set; }
 
         public CoverValue Value { get; set; }
 
+        public int? CountryId { get; set; }
         public Country Country { get; set; }
 
         public string ImageDataUrl { get; set; }

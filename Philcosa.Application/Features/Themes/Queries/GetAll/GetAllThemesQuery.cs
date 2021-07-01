@@ -46,7 +46,7 @@ namespace Philcosa.Application.Features.Themes.Queries.GetAll
                     Name = theme.Name
                 });
             }
-            return await Result<List<GetAllThemesResponse>>.SuccessAsync(mappedThemes);
+            return await Result<List<GetAllThemesResponse>>.SuccessAsync(mappedThemes.OrderBy(x => x.Name).ToList());
         }
     }
 }

@@ -137,6 +137,8 @@ namespace Philcosa.Client.Pages.Catalog
                         Rate = product.Rate,
                         BrandId = product.BrandId,
                         Barcode = product.Barcode
+                        
+                        
                     });
                 }
             }

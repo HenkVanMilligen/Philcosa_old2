@@ -73,7 +73,7 @@
         <MudNavLink Href="/catalog/coverissuers" Icon="@Icons.Material.Outlined.CallToAction">
             Cover Issuers
         </MudNavLink>
-        @if (_authorizationService.AuthorizeAsync(AuthenticationStateProviderUser, Permissions.Products.View).Result.Succeeded)
+        @*@if (_authorizationService.AuthorizeAsync(AuthenticationStateProviderUser, Permissions.Products.View).Result.Succeeded)
             {
                 <MudNavLink Href="/catalog/products" Icon="@Icons.Material.Outlined.CallToAction">
                     @localizer["Products"]
@@ -84,7 +84,7 @@
                 <MudNavLink Href="/catalog/brands" Icon="@Icons.Material.Outlined.CallToAction">
                     @localizer["Brands"]
                 </MudNavLink>
-            }
+            }*@
     }
 </MudNavMenu>
 

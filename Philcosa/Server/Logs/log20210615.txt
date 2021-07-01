@@ -1,0 +1,614 @@
+2021-06-15 11:44:30.497 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-15 11:44:30.556 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-15 11:44:30.563 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-15 11:44:30.564 +02:00 [INF] Hosting environment: Development
+2021-06-15 11:44:30.565 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-15 12:20:21.104 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-15 12:20:21.163 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-15 12:20:21.165 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-15 12:20:21.166 +02:00 [INF] Hosting environment: Development
+2021-06-15 12:20:21.166 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-15 12:58:26.727 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-15 12:58:26.806 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-15 12:58:26.809 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-15 12:58:26.810 +02:00 [INF] Hosting environment: Development
+2021-06-15 12:58:26.811 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-15 13:05:45.013 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-15 13:05:45.093 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-15 13:05:45.097 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-15 13:05:45.097 +02:00 [INF] Hosting environment: Development
+2021-06-15 13:05:45.098 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-15 13:56:30.393 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-15 13:56:30.451 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-15 13:56:30.454 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-15 13:56:30.455 +02:00 [INF] Hosting environment: Development
+2021-06-15 13:56:30.455 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-15 14:10:39.350 +02:00 [ERR] Failed executing DbCommand (374ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."CoverDate", t."IdOnDate", c0."Code" AS "CoverIssuer", t."Number", t."Description", t."AmountIssued", t."ImageDataUrl", t."Atlas", t."Alberta", c1."Code" AS "CoverType", c1."Id" AS "CoverTypeId", c2."Code" AS "CoverValue", c2."Id" AS "CoverValueId", c3."Code" AS "Country", c3."Id" AS "CountryId", FALSE AS "ShowDetails"
+FROM (
+    SELECT c."Id", c."Alberta", c."AmountIssued", c."Atlas", c."CountryId", c."CoverDate", c."CoverIssuerId", c."CoverTypeId", c."CoverValueId", c."Description", c."IdOnDate", c."ImageDataUrl", c."Number"
+    FROM "Covers" AS c
+    WHERE (c."Description" IS NOT NULL)
+    ORDER BY c."Id"
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "CoverIssuers" AS c0 ON t."CoverIssuerId" = c0."Id"
+LEFT JOIN "CoverTypes" AS c1 ON t."CoverTypeId" = c1."Id"
+LEFT JOIN "CoverValues" AS c2 ON t."CoverValueId" = c2."Id"
+LEFT JOIN "Countries" AS c3 ON t."CountryId" = c3."Id"
+ORDER BY t."Id"
+2021-06-15 14:10:39.678 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Philcosa.Infrastructure.Contexts.ApplicationDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column c.CoverValueId does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.CoverValueId does not exist
+    Position: 475
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column c.CoverValueId does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.CoverValueId does not exist
+    Position: 475
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+2021-06-15 14:11:23.951 +02:00 [ERR] Failed executing DbCommand (311ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."CoverDate", t."IdOnDate", c0."Code" AS "CoverIssuer", t."Number", t."Description", t."AmountIssued", t."ImageDataUrl", t."Atlas", t."Alberta", c1."Code" AS "CoverType", c1."Id" AS "CoverTypeId", c2."Code" AS "CoverValue", c2."Id" AS "CoverValueId", c3."Code" AS "Country", c3."Id" AS "CountryId", FALSE AS "ShowDetails"
+FROM (
+    SELECT c."Id", c."Alberta", c."AmountIssued", c."Atlas", c."CountryId", c."CoverDate", c."CoverIssuerId", c."CoverTypeId", c."CoverValueId", c."Description", c."IdOnDate", c."ImageDataUrl", c."Number"
+    FROM "Covers" AS c
+    WHERE (c."Description" IS NOT NULL)
+    ORDER BY c."Id"
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "CoverIssuers" AS c0 ON t."CoverIssuerId" = c0."Id"
+LEFT JOIN "CoverTypes" AS c1 ON t."CoverTypeId" = c1."Id"
+LEFT JOIN "CoverValues" AS c2 ON t."CoverValueId" = c2."Id"
+LEFT JOIN "Countries" AS c3 ON t."CountryId" = c3."Id"
+ORDER BY t."Id"
+2021-06-15 14:11:24.146 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Philcosa.Infrastructure.Contexts.ApplicationDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column c.CoverValueId does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.CoverValueId does not exist
+    Position: 475
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column c.CoverValueId does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.CoverValueId does not exist
+    Position: 475
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+2021-06-15 14:11:49.158 +02:00 [ERR] Failed executing DbCommand (350ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."CoverDate", t."IdOnDate", c0."Code" AS "CoverIssuer", t."Number", t."Description", t."AmountIssued", t."ImageDataUrl", t."Atlas", t."Alberta", c1."Code" AS "CoverType", c1."Id" AS "CoverTypeId", c2."Code" AS "CoverValue", c2."Id" AS "CoverValueId", c3."Code" AS "Country", c3."Id" AS "CountryId", FALSE AS "ShowDetails"
+FROM (
+    SELECT c."Id", c."Alberta", c."AmountIssued", c."Atlas", c."CountryId", c."CoverDate", c."CoverIssuerId", c."CoverTypeId", c."CoverValueId", c."Description", c."IdOnDate", c."ImageDataUrl", c."Number"
+    FROM "Covers" AS c
+    WHERE (c."Description" IS NOT NULL)
+    ORDER BY c."Id"
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "CoverIssuers" AS c0 ON t."CoverIssuerId" = c0."Id"
+LEFT JOIN "CoverTypes" AS c1 ON t."CoverTypeId" = c1."Id"
+LEFT JOIN "CoverValues" AS c2 ON t."CoverValueId" = c2."Id"
+LEFT JOIN "Countries" AS c3 ON t."CountryId" = c3."Id"
+ORDER BY t."Id"
+2021-06-15 14:11:49.349 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Philcosa.Infrastructure.Contexts.ApplicationDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column c.CoverValueId does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.CoverValueId does not exist
+    Position: 475
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column c.CoverValueId does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.CoverValueId does not exist
+    Position: 475
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+2021-06-15 14:12:20.633 +02:00 [ERR] Failed executing DbCommand (390ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."CoverDate", c."IdOnDate", c0."Code" AS "CoverIssuer", c."Number", c."Description", c."AmountIssued", c."ImageDataUrl", c."Atlas", c."Alberta", c1."Code" AS "CoverType", c1."Id" AS "CoverTypeId", c2."Code" AS "CoverValue", c2."Id" AS "CoverValueId", c3."Code" AS "Country", c3."Id" AS "CountryId", FALSE AS "ShowDetails"
+FROM "Covers" AS c
+LEFT JOIN "CoverIssuers" AS c0 ON c."CoverIssuerId" = c0."Id"
+LEFT JOIN "CoverTypes" AS c1 ON c."CoverTypeId" = c1."Id"
+LEFT JOIN "CoverValues" AS c2 ON c."CoverValueId" = c2."Id"
+LEFT JOIN "Countries" AS c3 ON c."CountryId" = c3."Id"
+WHERE (c."Description" IS NOT NULL)
+ORDER BY c."Id"
+2021-06-15 14:12:20.695 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Philcosa.Infrastructure.Contexts.ApplicationDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column c.CoverValueId does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.CoverValueId does not exist
+    Position: 515
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column c.CoverValueId does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.CoverValueId does not exist
+    Position: 515
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+2021-06-15 14:12:45.735 +02:00 [ERR] Failed executing DbCommand (288ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."CoverDate", t."IdOnDate", c0."Code" AS "CoverIssuer", t."Number", t."Description", t."AmountIssued", t."ImageDataUrl", t."Atlas", t."Alberta", c1."Code" AS "CoverType", c1."Id" AS "CoverTypeId", c2."Code" AS "CoverValue", c2."Id" AS "CoverValueId", c3."Code" AS "Country", c3."Id" AS "CountryId", FALSE AS "ShowDetails"
+FROM (
+    SELECT c."Id", c."Alberta", c."AmountIssued", c."Atlas", c."CountryId", c."CoverDate", c."CoverIssuerId", c."CoverTypeId", c."CoverValueId", c."Description", c."IdOnDate", c."ImageDataUrl", c."Number"
+    FROM "Covers" AS c
+    WHERE (c."Description" IS NOT NULL)
+    ORDER BY c."Id"
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "CoverIssuers" AS c0 ON t."CoverIssuerId" = c0."Id"
+LEFT JOIN "CoverTypes" AS c1 ON t."CoverTypeId" = c1."Id"
+LEFT JOIN "CoverValues" AS c2 ON t."CoverValueId" = c2."Id"
+LEFT JOIN "Countries" AS c3 ON t."CountryId" = c3."Id"
+ORDER BY t."Id"
+2021-06-15 14:12:46.237 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Philcosa.Infrastructure.Contexts.ApplicationDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column c.CoverValueId does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.CoverValueId does not exist
+    Position: 475
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column c.CoverValueId does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.CoverValueId does not exist
+    Position: 475
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+2021-06-15 14:12:54.814 +02:00 [ERR] Failed executing DbCommand (364ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Alberta", c."AmountIssued", c."Atlas", c."CountryId", c."CoverDate", c."CoverIssuerId", c."CoverTypeId", c."CoverValueId", c."CreatedBy", c."CreatedOn", c."Description", c."IdOnDate", c."ImageDataUrl", c."LastModifiedBy", c."LastModifiedOn", c."Number", c0."Id", c0."Code", c0."CreatedBy", c0."CreatedOn", c0."LastModifiedBy", c0."LastModifiedOn", c0."Name", c1."Id", c1."Code", c1."CreatedBy", c1."CreatedOn", c1."LastModifiedBy", c1."LastModifiedOn", c1."Name", c2."Id", c2."Code", c2."CreatedBy", c2."CreatedOn", c2."LastModifiedBy", c2."LastModifiedOn", c2."MaxValue", c2."MinValue", c3."Id", c3."Code", c3."CreatedBy", c3."CreatedOn", c3."LastModifiedBy", c3."LastModifiedOn", c3."Name", t0."CoverId", t0."ThemeId", t0."CreatedBy", t0."CreatedOn", t0."Id", t0."LastModifiedBy", t0."LastModifiedOn", t0."Id0", t0."CreatedBy0", t0."CreatedOn0", t0."LastModifiedBy0", t0."LastModifiedOn0", t0."Name"
+FROM "Covers" AS c
+LEFT JOIN "CoverIssuers" AS c0 ON c."CoverIssuerId" = c0."Id"
+LEFT JOIN "CoverTypes" AS c1 ON c."CoverTypeId" = c1."Id"
+LEFT JOIN "CoverValues" AS c2 ON c."CoverValueId" = c2."Id"
+LEFT JOIN "Countries" AS c3 ON c."CountryId" = c3."Id"
+LEFT JOIN (
+    SELECT c4."CoverId", c4."ThemeId", c4."CreatedBy", c4."CreatedOn", c4."Id", c4."LastModifiedBy", c4."LastModifiedOn", t."Id" AS "Id0", t."CreatedBy" AS "CreatedBy0", t."CreatedOn" AS "CreatedOn0", t."LastModifiedBy" AS "LastModifiedBy0", t."LastModifiedOn" AS "LastModifiedOn0", t."Name"
+    FROM "CoverThemes" AS c4
+    INNER JOIN "Themes" AS t ON c4."ThemeId" = t."Id"
+) AS t0 ON c."Id" = t0."CoverId"
+ORDER BY c."Id", c0."Id", c1."Id", c2."Id", c3."Id", t0."CoverId", t0."ThemeId", t0."Id0"
+2021-06-15 14:12:54.883 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Philcosa.Infrastructure.Contexts.ApplicationDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column c.CoverValueId does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.CoverValueId does not exist
+    Position: 1097
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column c.CoverValueId does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.CoverValueId does not exist
+    Position: 1097
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+2021-06-15 14:14:23.806 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-15 14:14:23.854 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-15 14:14:23.857 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-15 14:14:23.858 +02:00 [INF] Hosting environment: Development
+2021-06-15 14:14:23.858 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-15 14:14:51.950 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-06-15 14:14:51.950 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-06-15 14:14:51.950 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-06-15 14:14:52.146 +02:00 [ERR] Connection id "0HM9FUSLECGFF", Request id "0HM9FUSLECGFF:00000017": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-06-15 14:14:52.146 +02:00 [ERR] Connection id "0HM9FUSLECGFF", Request id "0HM9FUSLECGFF:00000019": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-06-15 14:14:52.146 +02:00 [ERR] Connection id "0HM9FUSLECGFF", Request id "0HM9FUSLECGFF:00000013": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-06-15 14:14:53.445 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-06-15 14:14:53.659 +02:00 [ERR] Connection id "0HM9FUSLECGFF", Request id "0HM9FUSLECGFF:0000001B": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-06-15 14:14:53.694 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-06-15 14:14:53.753 +02:00 [ERR] Connection id "0HM9FUSLECGFF", Request id "0HM9FUSLECGFF:0000001D": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at Microsoft.AspNetCore.Http.DefaultHttpResponse.set_ContentType(String value)
+   at Philcosa.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\Dev\Philcosa\Philcosa\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2021-06-15 14:15:20.445 +02:00 [ERR] Failed executing DbCommand (401ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Alberta", c."AmountIssued", c."Atlas", c."CountryId", c."CoverDate", c."CoverIssuerId", c."CoverTypeId", c."CoverValueId", c."CreatedBy", c."CreatedOn", c."Description", c."IdOnDate", c."ImageDataUrl", c."LastModifiedBy", c."LastModifiedOn", c."Number", c0."Id", c0."Code", c0."CreatedBy", c0."CreatedOn", c0."LastModifiedBy", c0."LastModifiedOn", c0."Name", c1."Id", c1."Code", c1."CreatedBy", c1."CreatedOn", c1."LastModifiedBy", c1."LastModifiedOn", c1."Name", c2."Id", c2."Code", c2."CreatedBy", c2."CreatedOn", c2."LastModifiedBy", c2."LastModifiedOn", c2."MaxValue", c2."MinValue", c3."Id", c3."Code", c3."CreatedBy", c3."CreatedOn", c3."LastModifiedBy", c3."LastModifiedOn", c3."Name", t0."CoverId", t0."ThemeId", t0."CreatedBy", t0."CreatedOn", t0."Id", t0."LastModifiedBy", t0."LastModifiedOn", t0."Id0", t0."CreatedBy0", t0."CreatedOn0", t0."LastModifiedBy0", t0."LastModifiedOn0", t0."Name"
+FROM "Covers" AS c
+LEFT JOIN "CoverIssuers" AS c0 ON c."CoverIssuerId" = c0."Id"
+LEFT JOIN "CoverTypes" AS c1 ON c."CoverTypeId" = c1."Id"
+LEFT JOIN "CoverValues" AS c2 ON c."CoverValueId" = c2."Id"
+LEFT JOIN "Countries" AS c3 ON c."CountryId" = c3."Id"
+LEFT JOIN (
+    SELECT c4."CoverId", c4."ThemeId", c4."CreatedBy", c4."CreatedOn", c4."Id", c4."LastModifiedBy", c4."LastModifiedOn", t."Id" AS "Id0", t."CreatedBy" AS "CreatedBy0", t."CreatedOn" AS "CreatedOn0", t."LastModifiedBy" AS "LastModifiedBy0", t."LastModifiedOn" AS "LastModifiedOn0", t."Name"
+    FROM "CoverThemes" AS c4
+    INNER JOIN "Themes" AS t ON c4."ThemeId" = t."Id"
+) AS t0 ON c."Id" = t0."CoverId"
+ORDER BY c."Id", c0."Id", c1."Id", c2."Id", c3."Id", t0."CoverId", t0."ThemeId", t0."Id0"
+2021-06-15 14:15:20.526 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Philcosa.Infrastructure.Contexts.ApplicationDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column c.CoverValueId does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.CoverValueId does not exist
+    Position: 1097
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column c.CoverValueId does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult()
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.CoverValueId does not exist
+    Position: 1097
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+2021-06-15 14:20:33.867 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-15 14:20:33.919 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-15 14:20:33.922 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-15 14:20:33.923 +02:00 [INF] Hosting environment: Development
+2021-06-15 14:20:33.924 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-15 14:21:50.821 +02:00 [ERR] Failed executing DbCommand (365ms) [Parameters=[@__p_1='?' (DbType = Int32), @__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT t."Id", t."CoverDate", t."IdOnDate", c0."Code" AS "CoverIssuer", t."CoverIssuerId", t."Number", t."Description", t."AmountIssued", t."ImageDataUrl", t."Atlas", t."Alberta", c1."Code" AS "CoverType", t."CoverTypeId", c2."Code" AS "CoverValue", t."CoverValueId", c3."Code" AS "Country", t."CountryId", FALSE AS "ShowDetails"
+FROM (
+    SELECT c."Id", c."Alberta", c."AmountIssued", c."Atlas", c."CountryId", c."CoverDate", c."CoverIssuerId", c."CoverTypeId", c."CoverValueId", c."Description", c."IdOnDate", c."ImageDataUrl", c."Number"
+    FROM "Covers" AS c
+    WHERE (c."Description" IS NOT NULL)
+    ORDER BY c."Id"
+    LIMIT @__p_1 OFFSET @__p_0
+) AS t
+LEFT JOIN "CoverIssuers" AS c0 ON t."CoverIssuerId" = c0."Id"
+LEFT JOIN "CoverTypes" AS c1 ON t."CoverTypeId" = c1."Id"
+LEFT JOIN "CoverValues" AS c2 ON t."CoverValueId" = c2."Id"
+LEFT JOIN "Countries" AS c3 ON t."CountryId" = c3."Id"
+ORDER BY t."Id"
+2021-06-15 14:21:51.091 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'Philcosa.Infrastructure.Contexts.ApplicationDbContext'.
+Npgsql.PostgresException (0x80004005): 42703: column c.CoverValueId does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.CoverValueId does not exist
+    Position: 467
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+Npgsql.PostgresException (0x80004005): 42703: column c.CoverValueId does not exist
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+  Exception data:
+    Severity: ERROR
+    SqlState: 42703
+    MessageText: column c.CoverValueId does not exist
+    Position: 467
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\parser\parse_relation.c
+    Line: 3514
+    Routine: errorMissingColumn
+2021-06-15 14:23:25.602 +02:00 [INF] Now listening on: https://localhost:5001
+2021-06-15 14:23:25.653 +02:00 [INF] Now listening on: http://localhost:5000
+2021-06-15 14:23:25.657 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-15 14:23:25.657 +02:00 [INF] Hosting environment: Development
+2021-06-15 14:23:25.658 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-15 14:25:33.333 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'Philcosa.Infrastructure.Contexts.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_CoverThemes"
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Update.Internal.NpgsqlModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_CoverThemes"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: CoverThemes
+    ConstraintName: PK_CoverThemes
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\access\nbtree\nbtinsert.c
+    Line: 656
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Update.Internal.NpgsqlModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_CoverThemes"
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Update.Internal.NpgsqlModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_CoverThemes"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: CoverThemes
+    ConstraintName: PK_CoverThemes
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\access\nbtree\nbtinsert.c
+    Line: 656
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Update.Internal.NpgsqlModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)

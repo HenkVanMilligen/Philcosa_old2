@@ -38,6 +38,12 @@ namespace Philcosa.Client.Infrastructure.Managers.Admin.Cover
             return await response.ToResult<string>();
         }
 
+        //public async Task<List<GetAllPagedCoversResponse>> GetCoversAsync(GetAllPagedCoversRequest request)
+        //{
+        //    var response = await _httpClient.GetAsync(Routes.CoversEndpoints.GetAllPaged(request.PageNumber, request.PageSize, request.SearchString));
+        //    return await response.ToListResult<GetAllPagedCoversResponse>();
+        //}
+
         public async Task<PaginatedResult<GetAllPagedCoversResponse>> GetCoversAsync(GetAllPagedCoversRequest request)
         {
             var response = await _httpClient.GetAsync(Routes.CoversEndpoints.GetAllPaged(request.PageNumber, request.PageSize, request.SearchString));

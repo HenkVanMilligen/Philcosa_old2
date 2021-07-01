@@ -70,10 +70,10 @@ namespace Philcosa.Infrastructure
                 //Check if User Exists
                 var superUser = new ApplicationUser
                 {
-                    FirstName = "Mukesh",
-                    LastName = "Murugan",
-                    Email = "mukesh@blazorhero.com",
-                    UserName = "mukesh",
+                    FirstName = "Henk",
+                    LastName = "Van Milligen",
+                    Email = "henkvm14@gmail.com",
+                    UserName = "henkvm",
                     EmailConfirmed = true,
                     PhoneNumberConfirmed = true,
                     CreatedOn = DateTime.Now,
@@ -192,6 +192,7 @@ namespace Philcosa.Infrastructure
                 csv.Read();
                 csv.ReadHeader();
                 var id = 1;
+                var coverThemeId = 0;
                 while (csv.Read())
                 {
 
@@ -247,8 +248,10 @@ namespace Philcosa.Infrastructure
                     var coverThemeList = new List<CoverTheme>();
                     foreach (var themeForCover in themesList)
                     {
+                        coverThemeId++;
                         var coverTheme = new CoverTheme
                         {
+                            Id = coverThemeId,
                             CoverId = id,
                             ThemeId = themeForCover.Id,
                             CreatedBy = "DataSeed",

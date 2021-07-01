@@ -1,4 +1,5 @@
 ﻿using Philcosa.Shared.Wrapper;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -34,6 +35,16 @@ namespace Philcosa.Client.Infrastructure.Extensions
         {
             var responseAsString = await response.Content.ReadAsStringAsync();
             var responseObject = JsonSerializer.Deserialize<PaginatedResult<T>>(responseAsString, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
+            return responseObject;
+        }
+
+        public static async Task<List<T>> ToListResult<T>(this HttpResponseMessage response)
+        {
+            var responseAsString = await response.Content.ReadAsStringAsync();
+            var responseObject = JsonSerializer.Deserialize<List<T>>(responseAsString, new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
             });

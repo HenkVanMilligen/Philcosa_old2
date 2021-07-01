@@ -9,8 +9,8 @@ namespace Philcosa.Client.Infrastructure.Managers.Admin.Cover
 {
     public interface ICoverManager : IManager
     {
+        //Task<List<GetAllPagedCoversResponse>> GetCoversAsync(GetAllPagedCoversRequest request);
         Task<PaginatedResult<GetAllPagedCoversResponse>> GetCoversAsync(GetAllPagedCoversRequest request);
-
         Task<IResult<string>> GetCoverImageAsync(int id);
 
         Task<IResult<int>> SaveAsync(AddEditCoverCommand request);

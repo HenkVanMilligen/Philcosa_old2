@@ -40,3 +40,105 @@
 2021-06-14 12:39:32.124 +02:00 [INF] Application started. Press Ctrl+C to shut down.
 2021-06-14 12:39:32.214 +02:00 [INF] Hosting environment: Development
 2021-06-14 12:39:32.216 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 13:10:53.541 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 13:10:56.755 +02:00 [INF] Hosting environment: Development
+2021-06-14 13:10:56.757 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 13:11:40.861 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 13:11:40.933 +02:00 [INF] Hosting environment: Development
+2021-06-14 13:11:40.936 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 13:19:36.310 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 13:19:36.385 +02:00 [INF] Hosting environment: Development
+2021-06-14 13:19:36.388 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 13:33:57.680 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 13:33:57.752 +02:00 [INF] Hosting environment: Development
+2021-06-14 13:33:57.754 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 13:44:45.108 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 13:44:45.207 +02:00 [INF] Hosting environment: Development
+2021-06-14 13:44:45.209 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 13:59:02.728 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 13:59:02.834 +02:00 [INF] Hosting environment: Development
+2021-06-14 13:59:02.837 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 14:06:00.768 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 14:06:00.840 +02:00 [INF] Hosting environment: Development
+2021-06-14 14:06:00.843 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 14:10:49.923 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 14:10:49.989 +02:00 [INF] Hosting environment: Development
+2021-06-14 14:10:49.991 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 14:21:48.344 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 14:21:48.415 +02:00 [INF] Hosting environment: Development
+2021-06-14 14:21:48.418 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 14:29:16.403 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 14:29:16.474 +02:00 [INF] Hosting environment: Development
+2021-06-14 14:29:16.477 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 14:32:29.381 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 14:32:29.480 +02:00 [INF] Hosting environment: Development
+2021-06-14 14:32:29.483 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 15:06:20.223 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 15:06:20.297 +02:00 [INF] Hosting environment: Development
+2021-06-14 15:06:20.300 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 15:40:39.848 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 15:40:39.933 +02:00 [INF] Hosting environment: Development
+2021-06-14 15:40:39.935 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 15:42:54.723 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 15:42:54.792 +02:00 [INF] Hosting environment: Development
+2021-06-14 15:42:54.794 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 15:46:46.105 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-06-14 15:46:46.175 +02:00 [INF] Hosting environment: Development
+2021-06-14 15:46:46.177 +02:00 [INF] Content root path: D:\Dev\Philcosa\Philcosa\Server
+2021-06-14 15:51:58.074 +02:00 [ERR] Failed executing DbCommand (394ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?', @p8='?' (DbType = DateTime), @p9='?', @p10='?', @p11='?', @p12='?', @p13='?' (DbType = DateTime), @p14='?', @p15='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Covers" ("Alberta", "AmountIssued", "Atlas", "CountryId", "CoverDate", "CoverIssuerId", "CoverTypeId", "CreatedBy", "CreatedOn", "Description", "IdOnDate", "ImageDataUrl", "LastModifiedBy", "LastModifiedOn", "Number", "ValueId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15)
+RETURNING "Id";
+2021-06-14 15:51:58.817 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'Philcosa.Infrastructure.Contexts.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 22001: value too long for type character varying(5)
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 22001
+    MessageText: value too long for type character varying(5)
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\utils\adt\varchar.c
+    Line: 635
+    Routine: varchar
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 22001: value too long for type character varying(5)
+   at Npgsql.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|194_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 22001
+    MessageText: value too long for type character varying(5)
+    File: d:\pginstaller_13.auto\postgres.windows-x64\src\backend\utils\adt\varchar.c
+    Line: 635
+    Routine: varchar
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)

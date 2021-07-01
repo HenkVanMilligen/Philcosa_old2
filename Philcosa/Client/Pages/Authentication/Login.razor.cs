@@ -65,7 +65,7 @@ namespace Philcosa.Client.Pages.Authentication
 
         private void FillAdministratorCredentials()
         {
-            tokenModel.Email = "mukesh@blazorhero.com";
+            tokenModel.Email = "henkvm14@gmail.com";
             tokenModel.Password = "123Pa$$word!";
         }
 
